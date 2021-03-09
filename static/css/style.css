@@ -1,3 +1,32 @@
 body {
     background-color: none;
 }
+
+.nav-wrapper {
+    background-color: black;
+}
+
+.nav-wrapper img{
+    width: 400px;
+    height: auto;
+    padding-top: 10px;
+}
+
+.collapsible {
+    width: 75vw;
+    margin: auto;
+    color: white;
+}
+
+.collapsible-header i {
+    font-size: 45px;
+}
+
+.collapsible-header h4 {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.collapsible-body {
+    color: slategray;
+}

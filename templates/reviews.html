@@ -1,10 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
-    {% for reviews in reviews %}
-        {{ reviews.review_name }}<br>
-        {{ reviews.review_subtitle }}<br>
-        {{ reviews.review_description }}<br>
-    {% endfor %}
+    <ul class="collapsible popout">
+        {% for reviews in reviews %}
+        <li>
+            <div class="collapsible-header blue-grey darken-3">
+                <i class="fab fa-galactic-senate"></i>
+                <h4>{{ reviews.review_name }}</h4>
+            </div>
+            <div class="collapsible-body">
+                <h5>ERA: </h5><h6>{{ reviews.review_subtitle }}</h6><br>
+                <p>{{ reviews.review_description }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}
