@@ -40,7 +40,8 @@ body {
     text-align: center;
 }
 
-.input-field {
+.input-field, .card-panel {
     width: 80% !important;
     margin-left: 10% !important;
 }
+

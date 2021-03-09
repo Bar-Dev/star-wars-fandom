@@ -3,30 +3,52 @@
 
     <h3 class="add-review-title"><i class="fal fa-sword-laser"></i>Add Review</h3>
 
-    <div class="row">
-        <form class="col s12" method="POST" action="">
-        <div class="row">
-            <div class="input-field col s12">
-                <input id="icon_prefix" type="text" class="validate">
-                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Icon</label>
+    <div class="row card-panel">
+        <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="review_name" name="review_name" type="text" class="validate">
+                    <label for="review_name"><i class="fas fa-camera-movie"></i> Episode</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input id="icon_episode" type="text" class="validate">
-                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Episode</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="review_subtitle" name="review_subtitle" type="text" class="validate">
+                    <label for="review_subtitle"><i class="fal fa-film"></i> Film</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input id="icon_film" type="text" class="validate">
-                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Film</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="review_era" name="review_era" type="text" class="validate">
+                    <label for="review_era"><i class="fal fa-clock"></i> Era</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input id="icon_era" type="text" class="validate">
-                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Era</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea id="review_description" name="review_description" 
+                        minlength="5" maxlength="200" class="materialize-textarea 
+                            validate" required></textarea>
+                    <label for="review_description"><i class="fal fa-file-alt"></i> Description</label>
+                </div>
             </div>
-            <div class="input-field col s12">
-                <input id="icon_description" type="text" class="validate">
-                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Description</label>
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="review_icon" name="review_icon">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="fal fa-starship-freighter">Falcon</option>
+                    <option value="fas fa-space-station-moon-alt">Death Star</option>
+                    <option value="fas fa-starfighter">X-Wing</option>
+                    </select>
+                    <label for="review_icon"><i class="far fa-icons"></i> Icon</label>
+                </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large">
+                        Add Review <i class="fal fa-comment-lines"></i>
+                    </button>
+                </div>
+            </div>
         </form>
     </div>
 
