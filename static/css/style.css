@@ -19,7 +19,8 @@ body {
 }
 
 .collapsible-header i {
-    font-size: 45px;
+    font-size: 35px;
+    line-height: inherit;
 }
 
 .collapsible-header h4 {
@@ -27,6 +28,19 @@ body {
     margin-left: 10px;
 }
 
+.collapsible-header h5 {
+    margin: auto;
+}
+
 .collapsible-body {
     color: slategray;
+}
+
+.add-review-title {
+    text-align: center;
+}
+
+.input-field {
+    width: 80% !important;
+    margin-left: 10% !important;
 }

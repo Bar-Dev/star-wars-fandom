@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="add-review-title"><i class="fal fa-sword-laser"></i>Add Review</h3>
+
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="icon_prefix" type="text" class="validate">
+                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Icon</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="icon_episode" type="text" class="validate">
+                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Episode</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="icon_film" type="text" class="validate">
+                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Film</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="icon_era" type="text" class="validate">
+                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Era</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="icon_description" type="text" class="validate">
+                <label for="icon_prefix"><i class="fas fa-camera-movie"></i> Description</label>
+            </div>
+        </div>
+        </form>
+    </div>
+
+{% endblock %}
