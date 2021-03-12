@@ -9,9 +9,21 @@
                     <div class="col s6">
                         <h4><i class="{{ reviews.review_icon}}"></i>{{ reviews.review_name }}</h4>
                     </div>
-                    <div class="col s6">
+                    <div class="col s5">
                         <h5>{{ reviews.review_subtitle }}</h5>
                     </div>
+                {% if session.user %}
+                    <div class="col s1">
+                        <div class="dropdown-sw">
+                            <button class="dropbtn-sw"></button>
+                            <div class="dropdown-content-sw">
+                                <a href="{{ url_for('edit_review', reviews_id=reviews._id) }}">Edit</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
                 </div>
             </div>
             <div class="collapsible-body">
@@ -22,5 +34,6 @@
         </li>
         {% endfor %}
     </ul>
+    
 
 {% endblock %}

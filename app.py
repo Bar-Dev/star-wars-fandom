@@ -25,6 +25,11 @@ def get_reviews():
     return render_template("reviews.html", reviews=reviews)
 
 
+@app.route("/test")
+def test():
+    return render_template("test.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -112,6 +117,12 @@ def add_review():
         flash("Review Successfully Added")
         return redirect(url_for("get_reviews"))
     return render_template("add_review.html")
+
+
+@app.route("/edit_review/<reviews_id>", methods=["GET", "POST"])
+def edit_review(reviews_id):
+    reviews = mongo.db.reviews.find_one({"_id": ObjectId(reviews_id)})
+    return render_template("edit_review.html", reviews=reviews)
 
 
 if __name__ == "__main__":

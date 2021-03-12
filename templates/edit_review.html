@@ -1,25 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="add-review-title"><i class="fal fa-sword-laser"></i>Add Review</h3>
+    <h3 class="add-review-title"><i class="fal fa-sword-laser"></i>Edit Review</h3>
 
     <div class="row card-panel">
-        <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
+        <form class="col s12" method="POST" action="{{ url_for('edit_review', reviews_id=reviews._id) }}">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="review_name" name="review_name" type="text" class="validate" required>
+                    <input id="review_name" name="review_name" value="{{ reviews.review_name }}" type="text" class="validate" required>
                     <label for="review_name"><i class="fas fa-camera-movie"></i> Episode</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="review_subtitle" name="review_subtitle" type="text" class="validate" required>
+                    <input id="review_subtitle" name="review_subtitle" value="{{ reviews.review_subtitle }}" type="text" class="validate" required>
                     <label for="review_subtitle"><i class="fal fa-film"></i> Film</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="review_era" name="review_era" type="text" class="validate" required>
+                    <input id="review_era" name="review_era" value="{{ reviews.review_era }}" type="text" class="validate" required>
                     <label for="review_era"><i class="fal fa-clock"></i> Era</label>
                 </div>
             </div>
@@ -27,7 +27,9 @@
                 <div class="input-field col s12">
                     <textarea id="review_description" name="review_description" 
                         minlength="5" maxlength="200" class="materialize-textarea 
-                            validate" required></textarea>
+                            validate" required>
+                        {{- reviews.review_description -}}
+                        </textarea>
                     <label for="review_description"><i class="fal fa-file-alt"></i> Description</label>
                 </div>
             </div>
@@ -45,7 +47,7 @@
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large">
-                        Add Review <i class="fal fa-comment-lines"></i>
+                        Edit Review <i class="fal fa-comment-lines"></i>
                     </button>
                 </div>
             </div>
