@@ -110,19 +110,23 @@ def add_review():
             "review_subtitle": request.form.get("review_subtitle"),
             "review_era": request.form.get("review_era"),
             "review_description": request.form.get("review_description"),
-            "review_icon": request.form.get("review_icon"),
+            "icon_name": request.form.get("icon_name"),
             "reviewed_by": session["user"]
         }
         mongo.db.reviews.insert_one(reviews)
         flash("Review Successfully Added")
         return redirect(url_for("get_reviews"))
-    return render_template("add_review.html")
+
+    icons = mongo.db.icons.find().sort("icon_name", 1)
+    return render_template("add_review.html", icons=icons)
 
 
 @app.route("/edit_review/<reviews_id>", methods=["GET", "POST"])
 def edit_review(reviews_id):
     reviews = mongo.db.reviews.find_one({"_id": ObjectId(reviews_id)})
-    return render_template("edit_review.html", reviews=reviews)
+
+    icons = mongo.db.icons.find().sort("icon_name", 1)
+    return render_template("edit_review.html", reviews=reviews, icons=icons)
 
 
 if __name__ == "__main__":

@@ -5,6 +5,18 @@
 
     <div class="row card-panel">
         <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
+    <!--  Icon Selection -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <select id="icon_name" name="icon_name" class="validate" required>
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for icon in icons %}
+                        <option value="{{ icon.icon_name }}">{{ icon.icon_font }}</option>
+                    {% endfor %}
+                    </select>
+                    <label for="icon_name"><i class="far fa-icons"></i> Icon</label>
+                </div>
+            </div>
             <div class="row">
                 <div class="input-field col s12">
                     <input id="review_name" name="review_name" type="text" class="validate" required>
@@ -29,17 +41,6 @@
                         minlength="5" maxlength="200" class="materialize-textarea 
                             validate" required></textarea>
                     <label for="review_description"><i class="fal fa-file-alt"></i> Description</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <select id="review_icon" name="review_icon" class="validate" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="fal fa-starship-freighter">Falcon</option>
-                    <option value="fas fa-space-station-moon-alt">Death Star</option>
-                    <option value="fas fa-starfighter">X-Wing</option>
-                    </select>
-                    <label for="review_icon"><i class="far fa-icons"></i> Icon</label>
                 </div>
             </div>
             <div class="row">
