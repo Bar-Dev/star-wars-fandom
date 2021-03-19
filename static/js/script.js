@@ -40,3 +40,19 @@ $('.dropdown-trigger').dropdown();
         });
     };
 
+const cat_name = document.getElementById("category_name"); 
+    cat_name.addEventListener("change", function() {
+        category_name = document.getElementById("category_name").value
+        if (category_name === "main-films") {
+            document.getElementById("film_list_one").innerHTML = ` 
+                    <select id="film_name" name="film_name" class="validate" required>
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    </select>
+                    <label for="film_name"><i class="far fa-icons"></i> Film</label>`
+        }
+        else {
+           document.getElementById("film_list_one").innerHTML = "Hello" 
+        };
+    });

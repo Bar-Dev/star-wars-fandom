@@ -65,7 +65,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
-                    side = mongo.db.users.find_one(
+                    sides = mongo.db.users.find_one(
                         {"username": session["user"]})["sides"]
                     flash("Welcome, {}".format(
                         request.form.get("username")))
@@ -86,11 +86,13 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    sides = mongo.db.users.find_one(
+        {"username": session["user"]})["sides"]
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, sides=sides)
 
     return redirect(url_for("login"))
 
@@ -107,6 +109,8 @@ def add_review():
     if request.method == "POST":
         reviews = {
             "review_name": request.form.get("review_name"),
+            "category_name": request.form.get("category_name"),
+            "film_name": request.form.get("film_name"),
             "review_subtitle": request.form.get("review_subtitle"),
             "review_era": request.form.get("review_era"),
             "review_description": request.form.get("review_description"),
@@ -118,15 +122,38 @@ def add_review():
         return redirect(url_for("get_reviews"))
 
     icons = mongo.db.icons.find().sort("icon_name", 1)
-    return render_template("add_review.html", icons=icons)
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    films = mongo.db.films.find().sort("film_name", 1)
+    return render_template("add_review.html", icons=icons, films=films, categories=categories)
 
 
 @app.route("/edit_review/<reviews_id>", methods=["GET", "POST"])
 def edit_review(reviews_id):
-    reviews = mongo.db.reviews.find_one({"_id": ObjectId(reviews_id)})
+    if request.method == "POST":
+        submit = {
+            "review_name": request.form.get("review_name"),
+            "film_name": request.form.get("film_name"),
+            "review_subtitle": request.form.get("review_subtitle"),
+            "review_era": request.form.get("review_era"),
+            "review_description": request.form.get("review_description"),
+            "icon_name": request.form.get("icon_name"),
+            "reviewed_by": session["user"]
+        }
+        mongo.db.reviews.update({"_id": ObjectId(reviews_id)}, submit)
+        flash("Review Successfully Updated")
 
+    reviews = mongo.db.reviews.find_one({"_id": ObjectId(reviews_id)})
     icons = mongo.db.icons.find().sort("icon_name", 1)
-    return render_template("edit_review.html", reviews=reviews, icons=icons)
+    films = mongo.db.films.find().sort("film_name", 1)
+    return render_template("edit_review.html", reviews=reviews, icons=icons, films=films)
+
+
+@app.route("/delete_review/<reviews_id>")
+def delete_review(reviews_id):
+    mongo.db.reviews.remove({"_id": ObjectId(reviews_id)})
+    flash("Review Successfully Deleted")
+    return redirect(url_for("get_reviews"))
+
 
 
 if __name__ == "__main__":

@@ -19,6 +19,24 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
+                    <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Choose your option</option>
+                        <option value="main-films">Main Star Wars Films</option>
+                        <option value="spin-offs">Spin-Off Films</option>
+                    </select>
+                    <label for="category_name"><i class="far fa-icons"></i> Film Category</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <div id="film_list_one">
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="row">
+                <div class="input-field col s12">
                     <input id="review_name" name="review_name" type="text" class="validate" required>
                     <label for="review_name"><i class="fas fa-camera-movie"></i> Episode</label>
                 </div>
