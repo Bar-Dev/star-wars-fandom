@@ -10,7 +10,7 @@
                         <h4><i class="{{ reviews.icon_name }}"></i>{{ reviews.review_name }}</h4>
                     </div>
                     <div class="col s5">
-                        <h5>{{ reviews.review_subtitle }}</h5>
+                        <h5>{{ reviews.film_subtitle }}</h5>
                     </div>
                 {% if session.user|lower == reviews.reviewed_by|lower %}
                 <div class="col s1">

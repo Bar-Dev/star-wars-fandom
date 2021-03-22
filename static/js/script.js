@@ -43,25 +43,26 @@ $('.dropdown-trigger').dropdown();
 function filmSelected() {
     var selectedFilm = document.getElementById("review_name").value;
         if (selectedFilm === "Star Wars I") {
-            document.getElementById("era-fill").innerHTML = "The Phantom Menace";
+            document.getElementById("film_subtitle").textContent = "The Phantom Menace";
+            document.getElementById("film_subtitle").innerHTML = "The Phantom Menace";
         } else if (selectedFilm === "Star Wars II") {
-            document.getElementById("era-fill").innerHTML = "The Clone Wars";
+            document.getElementById("film_subtitle").textContent = "The Clone Wars";
         } else if (selectedFilm === "Star Wars III") {
-            document.getElementById("era-fill").innerHTML = "The Revenge of the Sith";
+            document.getElementById("film_subtitle").innerHTML = "The Revenge of the Sith";
         } else if (selectedFilm === "Star Wars IV") {
-            document.getElementById("era-fill").innerHTML = "A New Hope";
+            document.getElementById("film_subtitle").innerHTML = "A New Hope";
         } else if (selectedFilm === "Star Wars V") {
-            document.getElementById("era-fill").innerHTML = "The Empire Strikes Back";
+            document.getElementById("film_subtitle").innerHTML = "The Empire Strikes Back";
         } else if (selectedFilm === "Star Wars VI") {
-            document.getElementById("era-fill").innerHTML = "Return of the Jedi";
+            document.getElementById("film_subtitle").innerHTML = "Return of the Jedi";
         } else if (selectedFilm === "Star Wars VII") {
-            document.getElementById("era-fill").innerHTML = "The Force Awakens";
+            document.getElementById("film_subtitle").innerHTML = "The Force Awakens";
         } else if (selectedFilm === "Star Wars VII") {
-            document.getElementById("era-fill").innerHTML = "The Last Jedi";
+            document.getElementById("film_subtitle").innerHTML = "The Last Jedi";
         } else if (selectedFilm === "Star Wars IX") {
-            document.getElementById("era-fill").innerHTML = "The Rise of Skywalker";
+            document.getElementById("film_subtitle").innerHTML = "The Rise of Skywalker";
         } else {
-            document.getElementById("era-fill").innerHTML = "Please Select Film";
+            document.getElementById("film_subtitle").innerHTML = "Please Select Film";
         }
     }
 
