@@ -89,3 +89,7 @@ button, input, optgroup, select, textarea {
 input, textarea {
     color: black !important;
 }
+
+.btn-large {
+    color: slategray !important;
+}

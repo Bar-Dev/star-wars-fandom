@@ -11,7 +11,7 @@
                     <select id="icon_name" name="icon_name" class="validate" required>
                     <option value="" disabled selected>Choose your option</option>
                     {% for icon in icons %}
-                        <option value="{{ icon.icon_name }}">{{ icon.icon_font }}</option>
+                        <option value="{{ icon.icon_name }}">{{ icon.icon_font }} <i class="fab fa-galactic-senate prefix"></i></option>
                     {% endfor %}
                     </select>
                     <label for="icon_name"><i class="far fa-icons"></i> Icon</label>

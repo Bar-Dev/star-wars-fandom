@@ -6,11 +6,14 @@
         <li>
             <div class="row">
                 <div class="collapsible-header blue-grey darken-3 col s12">
-                    <div class="col s6">
+                    <div class="col s4">
                         <h4><i class="{{ reviews.icon_name }}"></i>{{ reviews.review_name }}</h4>
                     </div>
-                    <div class="col s5">
-                        <h5>{{ reviews.film_subtitle }}</h5>
+                    <div class="col s3">
+                        <p>{{ reviews.film_subtitle }}</p>
+                    </div>
+                    <div class="col s2">
+                        <p><em>by: {{ reviews.reviewed_by }}</em></p>
                     </div>
                 {% if session.user|lower == reviews.reviewed_by|lower %}
                 <div class="col s1">
