@@ -40,19 +40,29 @@ $('.dropdown-trigger').dropdown();
         });
     };
 
-const cat_name = document.getElementById("category_name"); 
-    cat_name.addEventListener("change", function() {
-        category_name = document.getElementById("category_name").value
-        if (category_name === "main-films") {
-            document.getElementById("film_list_one").innerHTML = ` 
-                    <select id="film_name" name="film_name" class="validate" required>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    </select>
-                    <label for="film_name"><i class="far fa-icons"></i> Film</label>`
+function filmSelected() {
+    var selectedFilm = document.getElementById("review_name").value;
+        if (selectedFilm === "Star Wars I") {
+            document.getElementById("era-fill").innerHTML = "The Phantom Menace";
+        } else if (selectedFilm === "Star Wars II") {
+            document.getElementById("era-fill").innerHTML = "The Clone Wars";
+        } else if (selectedFilm === "Star Wars III") {
+            document.getElementById("era-fill").innerHTML = "The Revenge of the Sith";
+        } else if (selectedFilm === "Star Wars IV") {
+            document.getElementById("era-fill").innerHTML = "A New Hope";
+        } else if (selectedFilm === "Star Wars V") {
+            document.getElementById("era-fill").innerHTML = "The Empire Strikes Back";
+        } else if (selectedFilm === "Star Wars VI") {
+            document.getElementById("era-fill").innerHTML = "Return of the Jedi";
+        } else if (selectedFilm === "Star Wars VII") {
+            document.getElementById("era-fill").innerHTML = "The Force Awakens";
+        } else if (selectedFilm === "Star Wars VII") {
+            document.getElementById("era-fill").innerHTML = "The Last Jedi";
+        } else if (selectedFilm === "Star Wars IX") {
+            document.getElementById("era-fill").innerHTML = "The Rise of Skywalker";
+        } else {
+            document.getElementById("era-fill").innerHTML = "Please Select Film";
         }
-        else {
-           document.getElementById("film_list_one").innerHTML = "Hello" 
-        };
-    });
+    }
+
+

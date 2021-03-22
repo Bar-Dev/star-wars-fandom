@@ -109,9 +109,8 @@ def add_review():
     if request.method == "POST":
         reviews = {
             "review_name": request.form.get("review_name"),
-            "category_name": request.form.get("category_name"),
             "film_name": request.form.get("film_name"),
-            "review_subtitle": request.form.get("review_subtitle"),
+            "film_subtitle": request.form.get("film_subtitle"),
             "review_era": request.form.get("review_era"),
             "review_description": request.form.get("review_description"),
             "icon_name": request.form.get("icon_name"),
