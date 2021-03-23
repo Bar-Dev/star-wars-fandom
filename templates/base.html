@@ -24,7 +24,7 @@
                         <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
                         <li><a href="{{ url_for('test') }}">Test</a></li>
                     {% if session.user %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="{{ url_for('profile', username=session['user']) }}" onclick="playSound();">Profile</a></li>
                         <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
                         <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% else %}

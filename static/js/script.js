@@ -10,6 +10,10 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
 });
 
+$(document).ready(function(){
+    $('.tooltipped').tooltip();
+});
+
 $('.dropdown-trigger').dropdown();
 
     validateMaterializeSelect();
@@ -66,4 +70,8 @@ function filmSelected() {
         }
     }
 
+function playSound() {
+    var audio = new Audio("/static/sounds/dark-side.mp3");
+    audio.play();
+}
 

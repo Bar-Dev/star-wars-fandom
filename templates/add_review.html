@@ -11,7 +11,7 @@
                     <select id="icon_name" name="icon_name" class="validate" required>
                     <option value="" disabled selected>Choose your option</option>
                     {% for icon in icons %}
-                        <option value="{{ icon.icon_name }}">{{ icon.icon_font }} <i class="fab fa-galactic-senate prefix"></i></option>
+                        <option value="{{ icon.icon_name }}" data-icon="{{ icon.icon_image }}">{{ icon.icon_font }}</option>
                     {% endfor %}
                     </select>
                     <label for="icon_name"><i class="far fa-icons"></i> Icon</label>
@@ -30,7 +30,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="film_subtitle" name="film_subtitle" class="validate">
+                    <textarea id="film_subtitle" name="film_subtitle" class="validate" readonly>
                         </textarea>
                         <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
                 </div>

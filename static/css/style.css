@@ -1,15 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
     background-color: none;
+    font-family: "Raleway", sans-serif !important;
 }
 
-.nav-wrapper {
-    background-color: black;
+.nav-wrapper, .collapsible-header {
+    background-color: rgb(4, 4, 70) !important;
 }
 
 .nav-wrapper img{
     width: 400px;
     height: auto;
     padding-top: 10px;
+}
+
+.main-title {
+    text-align: center;
+    font-weight: 700;
+    color: rgb(4, 4, 70) !important;
 }
 
 .collapsible {
@@ -34,7 +45,7 @@ body {
 }
 
 .collapsible-body {
-    color: slategray;
+    color: navy;
 }
 
 .add-review-title {
@@ -74,11 +85,21 @@ body {
   display: block;
 }
 
-.dropdown-content-sw a:hover {background-color: #ddd;}
+.dropdown-content-sw a:hover {
+    background-color: #ddd;
+}
 
-.dropdown-sw:hover .dropdown-content-sw {display: block;}
+.dropdown-sw:hover .dropdown-content-sw {
+    display: block;
+}
 
-.dropdown-sw:hover .dropbtn-sw {background-color: #3e8e41;}
+.dropdown-sw:hover .dropbtn-sw {
+    background-color: #3e8e41;
+}
+
+.select-dropdown li img {
+    float: left !important;
+}
 
 button, input, optgroup, select, textarea {
     background-color: transparent !important;
@@ -92,4 +113,13 @@ input, textarea {
 
 .btn-large {
     color: slategray !important;
+}
+
+.material-tooltip {
+    border: solid 1px navy;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    color: navy;
+    min-height: 20px;
+    background-color: #fff;
 }
