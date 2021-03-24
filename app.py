@@ -90,11 +90,34 @@ def profile(username):
         {"username": session["user"]})["sides"]
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     if session["user"]:
+        user = mongo.db.users.find_one({"username": session["user"]})
+        print(user)
         return render_template("profile.html", username=username, sides=sides)
 
     return redirect(url_for("login"))
+
+
+@app.route("/edit_user/<user_id>", methods=["GET", "POST"])
+def edit_user(user_id):
+    user = mongo.db.users.find_one(
+            {"_id": ObjectId(session["user_id"])})
+    if request.method == "GET":
+        userName = user.get("username")
+        return render_template("edit_user.html", userName=userName, user=user)
+    elif request.method == "POST":
+        userName = user.get("username")
+        update = {"$set": {
+                "profile_image": request.form.get("profile_image"),
+                "sides": request.form.get("sides")
+            }
+        }
+        mongo.db.users.update_one(
+            {"_id": ObjectId(session["user_id"])}, update, upsert=True)
+    
+    flash("Review Successfully Updated")
+    return render_template("edit_user.html", userName=userName, user=user)
 
 
 @app.route("/logout")

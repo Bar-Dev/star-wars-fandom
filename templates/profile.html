@@ -1,17 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-
+    
     <div class="row">
-    <div class="col s8 m8 offset-m2">
-        <div class="card-panel">
-            <div class="h3">
-                {{ sides }} {{ username }}'s Profile
+        <div class="col s8 offset-s2 profile-layout">
+                <div class="col s4">
+                    <img id="audio" src="/static/images/yoda.jpeg">
+                </div>
+                <div class="col s4">
+                    <div class="profile-title">
+                        <h5>Account Name:</h5>
+                    </div>
+                    <div class="h3">
+                        {{ sides }} {{ username }}'s Profile
+                    </div>
+                </div>
             </div>
         </div>
-    
-    </div>
-    </div>
-    
+            {% if session.user == userName %}
+                <div class="col s1">
+                    <div class="dropdown-sw">
+                        <button class="dropbtn-sw"></button>
+                        <div class="dropdown-content-sw">
+                            <a href="{{url_for('edit_user')}}">Edit</a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
 
 {% endblock %}
 

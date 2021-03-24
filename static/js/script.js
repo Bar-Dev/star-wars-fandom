@@ -70,8 +70,10 @@ function filmSelected() {
         }
     }
 
-function playSound() {
-    var audio = new Audio("/static/sounds/dark-side.mp3");
+const soundClip = document.querySelector("#audio")
+    soundClip.addEventListener("load", function(){
+// Execute this when clicking the button
+const audio = new Audio("/static/sounds/light-side.mp3");
     audio.play();
-}
-
+    console.log("works");
+})

@@ -123,3 +123,15 @@ input, textarea {
     min-height: 20px;
     background-color: #fff;
 }
+
+#audio {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: solid 5px navy;
+}
+
+.profile-layout {
+    margin-top: 50px;
+}
