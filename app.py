@@ -43,13 +43,14 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            "sides": request.form.get("sides")
-        } 
+            "sides": request.form.get("sides"),
+            "profile_image": request.form.get("profile_image")
+        }
         mongo.db.users.insert_one(register)
 
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful") 
-        return redirect(url_for("profile", username=session["user"]))  
+        flash("Registration Successful")
+        return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
 
@@ -90,6 +91,8 @@ def profile(username):
         {"username": session["user"]})
     sides = mongo.db.users.find_one(
         {"username": session["user"]})["sides"]
+    profile_image = mongo.db.users.find_one(
+        {"username": session["user"]})["profile_image"]
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
@@ -97,7 +100,7 @@ def profile(username):
         user = mongo.db.users.find_one(
             {"username": session["user"]})
         return render_template(
-            "profile.html", username=username, sides=sides, user=user)
+            "profile.html", username=username, sides=sides, user=user, profile_image=profile_image)
 
     return redirect(url_for("login"))
 
@@ -108,7 +111,8 @@ def edit_user(user_id):
         print("POST REQUEST")
         print(request.form)
         submit = {"$set": {
-            "sides": request.form.get("sides")
+            "sides": request.form.get("sides"),
+            "profile_image": request.form.get("profile_image")
         }}
         user = mongo.db.users.find_one(
             {"_id": ObjectId(user_id)})

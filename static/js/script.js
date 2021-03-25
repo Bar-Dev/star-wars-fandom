@@ -75,5 +75,12 @@ const soundClip = document.querySelector("#audio")
 // Execute this when clicking the button
 const audio = new Audio("/static/sounds/light-side.mp3");
     audio.play();
-    console.log("works");
+    console.log(audio);
 })
+
+function tester() {
+    const test = document.querySelector("#audio").src
+    if (test == "https://8080-copper-rodent-enhlrbyj.ws-eu03.gitpod.io/static/images/yoda.jpg") {
+    console.log("ok");
+}
+}
