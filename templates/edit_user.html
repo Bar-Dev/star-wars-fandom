@@ -4,25 +4,26 @@
     <h3 class="center-align">Update Profile</h3>
 
     <div class="row">
-    <form class="col s8 m8 offset-m2" method="POST" action="{{ url_for('edit_user', user_id=user._id) }}">
-        <div class="card-panel">
-            <div class="row"> 
-                <div class="input-field col s12">
-                    <select name="sides" id="sides">
-                        <option value="Jedi Knight">Light Side</option>
-                        <option value="Sith Lord">Dark Side</option>
-                    </select>
-                    <label for="sides">Choose Your Side:</label>
+        <form class="col s8 m8 offset-m2" method="POST">
+            <div class="card-panel">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select name="sides" id="sides">
+                            <option value="Jedi Knight">Light Side</option>
+                            <option value="Sith Lord">Dark Side</option>
+                        </select>
+                        <label for="sides">Choose Your Side:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <a href="{{ url_for('get_reviews') }}" class="btn-large red">Cancel</a>
+                    <button type="submit" class="btn-large">
+                        Update <i class="fal fa-comment-lines"></i>
+                    </button>
                 </div>
             </div>
-            <div class="row">
-                <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                    Update
-                </button>
-            </div>
-        </div>
     
-    </form>
+        </form>
     </div>
 
 {% endblock %}

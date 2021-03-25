@@ -16,16 +16,15 @@
                 </div>
             </div>
         </div>
-            {% if session.user == userName %}
+            {% if session.user == user.username %}
                 <div class="col s1">
                     <div class="dropdown-sw">
                         <button class="dropbtn-sw"></button>
-                        <div class="dropdown-content-sw">
-                            <a href="{{url_for('edit_user')}}">Edit</a>
+                        <div>
+                            <a href="{{ url_for('edit_user', user_id=user._id) }}">Edit</a>
                         </div>
                     </div>
                 </div>
             {% endif %}
-
 {% endblock %}
 

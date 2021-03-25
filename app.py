@@ -86,38 +86,41 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
     sides = mongo.db.users.find_one(
         {"username": session["user"]})["sides"]
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        user = mongo.db.users.find_one({"username": session["user"]})
-        print(user)
-        return render_template("profile.html", username=username, sides=sides)
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})
+        return render_template(
+            "profile.html", username=username, sides=sides, user=user)
 
     return redirect(url_for("login"))
 
 
 @app.route("/edit_user/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
-    user = mongo.db.users.find_one(
-            {"_id": ObjectId(session["user_id"])})
-    if request.method == "GET":
-        userName = user.get("username")
-        return render_template("edit_user.html", userName=userName, user=user)
-    elif request.method == "POST":
-        userName = user.get("username")
-        update = {"$set": {
-                "profile_image": request.form.get("profile_image"),
-                "sides": request.form.get("sides")
-            }
-        }
+    if request.method == "POST":
+        print("POST REQUEST")
+        print(request.form)
+        submit = {"$set": {
+            "sides": request.form.get("sides")
+        }}
+        user = mongo.db.users.find_one(
+            {"_id": ObjectId(user_id)})
+        print(user)
         mongo.db.users.update_one(
-            {"_id": ObjectId(session["user_id"])}, update, upsert=True)
-    
-    flash("Review Successfully Updated")
-    return render_template("edit_user.html", userName=userName, user=user)
+            {"_id": ObjectId(user_id)}, submit)
+        flash("Profile Successfully Updated")
+        return redirect(url_for("profile", username=session["user"]))
+    user = mongo.db.users.find_one(
+            {"_id": ObjectId(user_id)})
+    sides = mongo.db.users.find().sort("sides", 1)
+    return render_template("edit_user.html", user=user, sides=sides)
 
 
 @app.route("/logout")
