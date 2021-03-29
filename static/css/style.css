@@ -124,7 +124,7 @@ input, textarea {
     background-color: #fff;
 }
 
-#audio {
+#pro-image {
     border-radius: 50%;
     width: 200px;
     height: 200px;
@@ -139,3 +139,9 @@ input, textarea {
 .profile-pic {
     display: none;
 }
+
+.pro-edit {
+    background-color: rgb(4, 4, 70) !important;
+    margin-left: 50px;
+}
+

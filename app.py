@@ -19,6 +19,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+# Main Reviews page
 @app.route("/get_reviews")
 def get_reviews():
     reviews = list(mongo.db.reviews.find().sort("review_name", 1))
@@ -31,8 +32,10 @@ def test():
 
 
 @app.route("/register", methods=["GET", "POST"])
+# User registration
 def register():
     if request.method == "POST":
+        # Check for existing User in DB
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -48,9 +51,11 @@ def register():
         }
         mongo.db.users.insert_one(register)
 
+        # Enter new seesion cookie for User
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
         return redirect(url_for("profile", username=session["user"]))
+    # If no User exists redirect to registration
     return render_template("register.html")
 
 
@@ -87,6 +92,7 @@ def login():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # Get session users's username and info to populate profile page
     user = mongo.db.users.find_one(
         {"username": session["user"]})
     sides = mongo.db.users.find_one(
@@ -105,9 +111,23 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route("/view_profiles/<username>", methods=["GET", "POST"])
+def view_profiles(username):
+    user = mongo.db.users.find_one(
+        {"username": username})
+    sides = mongo.db.users.find_one(
+        {"username": request.form.get("username")})
+    profile_image = mongo.db.users.find_one(
+        {"username": request.form.get("username")})
+    return render_template(
+        "user_profile.html", username=username, sides=sides, user=user, profile_image=profile_image)
+
+
+
 @app.route("/edit_user/<user_id>", methods=["GET", "POST"])
 def edit_user(user_id):
     if request.method == "POST":
+        # Check request is been triggered
         print("POST REQUEST")
         print(request.form)
         submit = {"$set": {
@@ -117,6 +137,7 @@ def edit_user(user_id):
         user = mongo.db.users.find_one(
             {"_id": ObjectId(user_id)})
         print(user)
+        # Update User preferences to DB
         mongo.db.users.update_one(
             {"_id": ObjectId(user_id)}, submit)
         flash("Profile Successfully Updated")
@@ -129,6 +150,7 @@ def edit_user(user_id):
 
 @app.route("/logout")
 def logout():
+    # End User's session
     flash("You have been logged out, may the Force be with You!")
     session.pop("user")
     return redirect(url_for("login"))
@@ -137,6 +159,7 @@ def logout():
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
+        # Populate DB with Review information
         reviews = {
             "review_name": request.form.get("review_name"),
             "film_name": request.form.get("film_name"),
@@ -146,6 +169,7 @@ def add_review():
             "icon_name": request.form.get("icon_name"),
             "reviewed_by": session["user"]
         }
+        # Add Review to DB
         mongo.db.reviews.insert_one(reviews)
         flash("Review Successfully Added")
         return redirect(url_for("get_reviews"))
@@ -159,6 +183,7 @@ def add_review():
 @app.route("/edit_review/<reviews_id>", methods=["GET", "POST"])
 def edit_review(reviews_id):
     if request.method == "POST":
+        # Allow session user to edit DB
         submit = {
             "review_name": request.form.get("review_name"),
             "film_name": request.form.get("film_name"),
@@ -168,6 +193,7 @@ def edit_review(reviews_id):
             "icon_name": request.form.get("icon_name"),
             "reviewed_by": session["user"]
         }
+        # Send updated review info to DB
         mongo.db.reviews.update({"_id": ObjectId(reviews_id)}, submit)
         flash("Review Successfully Updated")
 
@@ -179,6 +205,7 @@ def edit_review(reviews_id):
 
 @app.route("/delete_review/<reviews_id>")
 def delete_review(reviews_id):
+    # Allow session user to delete review
     mongo.db.reviews.remove({"_id": ObjectId(reviews_id)})
     flash("Review Successfully Deleted")
     return redirect(url_for("get_reviews"))

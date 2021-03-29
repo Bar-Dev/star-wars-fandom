@@ -8,6 +8,7 @@
             <div class="card-panel">
                 <div class="row">
                     <div class="input-field col s12">
+                            <!-- Allow user to change their side -->
                         <select name="sides" id="sides">
                             <option value="Jedi Knight">Light Side</option>
                             <option value="Sith Lord">Dark Side</option>
@@ -17,6 +18,8 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
+                            <!-- Allow user to choose their Profile pic from
+                                preset images within the Profile page -->
                         <select name="profile_image" id="profile_image">
                             <option value="placeholder.jpg">None</option>
                             <option value="ben-kenobi.jpg">Obi-One</option>
@@ -25,7 +28,7 @@
                             <option value="chewy.jpg">Chewy</option>
                             <option value="emperor.jpg">Palpatine</option>
                             <option value="han-solo.jpg">Han-Solo</option>
-                            <option value="leia.jpg">Princess Leia</option>
+                            <option value="leia.png">Princess Leia</option>
                             <option value="vader.jpg">Darth Vader</option>
                             <option value="stormtrooper.jpg">StormTrooper</option>
                         </select>
@@ -33,6 +36,7 @@
                     </div>
                 </div>
                 <div class="row">
+                        <!-- Cancel button provided to redirect to main reviews page -->
                     <a href="{{ url_for('get_reviews') }}" class="btn-large red">Cancel</a>
                     <button type="submit" class="btn-large">
                         Update <i class="fal fa-comment-lines"></i>

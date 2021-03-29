@@ -20,6 +20,7 @@
             <div class="row">
                 <div class="input-field col s12">
                     <select onchange="filmSelected()" id="review_name" name="review_name" class="validate" required>
+                        <!-- Function assigns the subtitle based on film selection -->
                     <option value="" disabled selected>Choose your option</option>
                     {% for film in films %}
                         <option value="{{ film.film_name }}">{{ film.film_name }}</option>

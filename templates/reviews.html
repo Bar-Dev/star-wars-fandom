@@ -15,7 +15,7 @@
                         <p>{{ reviews.film_subtitle }}</p>
                     </div>
                     <div class="col s2">
-                        <p><a class="tooltipped" data-position="bottom" data-tooltip="View Profile"><em>by: {{ reviews.reviewed_by }}</em></a></p>
+                        <p><a href="{{ url_for('view_profiles', username=reviews.reviewed_by) }}" class="tooltipped" data-position="bottom" data-tooltip="View Profile"><em>by: {{ reviews.reviewed_by }}</em></a></p>
                     </div>
                 {% if session.user|lower == reviews.reviewed_by|lower %}
                 <div class="col s1">

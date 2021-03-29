@@ -7,15 +7,11 @@
         <form class="col s12" method="POST" action="{{ url_for('edit_review', reviews_id=reviews._id) }}">
             <div class="row">
                 <div class="input-field col s12">
-                    <select id="icon_name" name="icon_name" value="{{ reviews.review_era }}" 
-                        class="validate" required>
-                    <option value="" disabled>Choose your option</option>
+                    <select id="icon_name" name="icon_name" class="validate" required>
+                    <option value="" disabled selected>Choose your option</option>
                     {% for icon in icons %}
-                        {% if icon.icon_name == reviews.icon_name %}
-                            <option value="{{ icon.icon_name }}" selected>{{ icon.icon_font }}</option>
-                        {% else %}
-                            <option value="{{ icon.icon_name }}">{{ icon.icon_font }}</option>
-                        {% endif %}
+                            <!-- Workaround to display icons within Materialize Dropdown -->
+                        <option value="{{ icon.icon_name }}" data-icon="{{ icon.icon_image }}">{{ icon.icon_font }}</option>
                     {% endfor %}
                     </select>
                     <label for="icon_name"><i class="far fa-icons"></i> Icon</label>
@@ -23,20 +19,21 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="review_name" name="review_name" value="{{ reviews.review_name }}" type="text" class="validate" required>
-                    <label for="review_name"><i class="fas fa-camera-movie"></i> Episode</label>
+                    <select onchange="filmSelected()" id="review_name" name="review_name" class="validate" required>
+                        <!-- Function assigns the subtitle based on film selection -->
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for film in films %}
+                        <option value="{{ film.film_name }}">{{ film.film_name }}</option>
+                    {% endfor %}
+                    </select>
+                    <label for="review_name"><i class="far fa-icons"></i> Film</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="review_subtitle" name="review_subtitle" value="{{ reviews.review_subtitle }}" type="text" class="validate" required>
-                    <label for="review_subtitle"><i class="fal fa-film"></i> Film</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="review_era" name="review_era" value="{{ reviews.review_era }}" type="text" class="validate" required>
-                    <label for="review_era"><i class="fal fa-clock"></i> Era</label>
+                    <textarea id="film_subtitle" name="film_subtitle" class="validate" readonly>
+                        </textarea>
+                        <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
                 </div>
             </div>
             <div class="row">

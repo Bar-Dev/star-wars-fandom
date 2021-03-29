@@ -1,19 +1,24 @@
+// Materialize form function
 $(document).ready(function(){
     $("select").formSelect();
 });
 
+// Materialize navbar function
 $(document).ready(function(){
     $(".sidenav").sidenav();
 });
 
+// Materialize collapsible function
 $(document).ready(function(){
     $('.collapsible').collapsible();
 });
 
+// Materialize tooltipped function
 $(document).ready(function(){
     $('.tooltipped').tooltip();
 });
 
+// Materialize workaround from CI for dropdown lists turning red if unchecked
 $('.dropdown-trigger').dropdown();
 
     validateMaterializeSelect();
@@ -44,6 +49,7 @@ $('.dropdown-trigger').dropdown();
         });
     };
 
+// Function to input subtitle based on selected File Title
 function filmSelected() {
     var selectedFilm = document.getElementById("review_name").value;
         if (selectedFilm === "Star Wars I") {
@@ -70,17 +76,33 @@ function filmSelected() {
         }
     }
 
-const soundClip = document.querySelector("#audio")
-    soundClip.addEventListener("load", function(){
-// Execute this when clicking the button
-const audio = new Audio("/static/sounds/light-side.mp3");
-    audio.play();
-    console.log(audio);
-})
+    
+// Function to play particular audio clip on load
+    const soundClip = document.getElementById("audio").innerHTML;
+    const audioLight = new Audio("/static/sounds/light-side.mp3");
+    const audioDark = new Audio("/static/sounds/dark-side.mp3");
+document.addEventListener("DOMContentLoaded", function(){
+    if (soundClip === "Jedi Knight") {
+        document.getElementById("audio-button").innerHTML = `<button id="audio-control" class="pro-edit waves-effect waves-light btn-large" onclick="stopLight();">Pause Audio</button>`
+        audioLight.play();
+    } else if (soundClip === "Sith Lord") {
+        document.getElementById("audio-button").innerHTML = `<button id="audio-control" class="pro-edit waves-effect waves-light btn-large" onclick="stopDark();">Pause Audio</button>`
+        audioDark.play();
+    }; 
+});
 
-function tester() {
-    const test = document.querySelector("#audio").src
-    if (test == "https://8080-copper-rodent-enhlrbyj.ws-eu03.gitpod.io/static/images/yoda.jpg") {
-    console.log("ok");
-}
-}
+function stopLight() {
+    if (audioLight.paused) {
+        audioLight.play();
+    } else {
+        audioLight.pause();
+    }
+};
+
+function stopDark() {
+    if (audioDark.paused) {
+        audioDark.play();
+    } else {
+        audioDark.pause();
+    }
+};
