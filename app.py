@@ -26,6 +26,13 @@ def get_reviews():
     return render_template("reviews.html", reviews=reviews)
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    return render_template("reviews.html", reviews=reviews)
+
+
 @app.route("/test")
 def test():
     return render_template("test.html")
@@ -185,9 +192,7 @@ def edit_review(reviews_id):
         # Allow session user to edit DB
         submit = {
             "review_name": request.form.get("review_name"),
-            "film_name": request.form.get("film_name"),
             "review_subtitle": request.form.get("review_subtitle"),
-            "review_era": request.form.get("review_era"),
             "review_description": request.form.get("review_description"),
             "icon_name": request.form.get("icon_name"),
             "reviewed_by": session["user"]

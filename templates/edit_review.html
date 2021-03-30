@@ -19,13 +19,11 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <select onchange="filmSelected()" id="review_name" name="review_name" class="validate" required>
-                        <!-- Function assigns the subtitle based on film selection -->
-                    <option value="" disabled selected>Choose your option</option>
-                    {% for film in films %}
-                        <option value="{{ film.film_name }}">{{ film.film_name }}</option>
-                    {% endfor %}
-                    </select>
+                    <textarea id="review_name" name="review_name" 
+                        minlength="5" maxlength="200" class="materialize-textarea 
+                            validate" required>
+                        {{- reviews.review_name -}}
+                        </textarea>
                     <label for="review_name"><i class="far fa-icons"></i> Film</label>
                 </div>
             </div>
@@ -34,6 +32,13 @@
                     <textarea id="film_subtitle" name="film_subtitle" class="validate" readonly>
                         </textarea>
                         <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
+                </div>
+            </div>
+            <div class="row film-order">
+                <div class="input-field col s12">
+                    <textarea id="film_order" name="film_order" class="validate" readonly>
+                        </textarea>
+                        <label for="film_order"></label>
                 </div>
             </div>
             <div class="row">
@@ -58,4 +63,8 @@
         </form>
     </div>
 
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/edit.js') }}"></script>    
 {% endblock %}

@@ -154,4 +154,16 @@ input, textarea {
     display: none;
 }
 
+.search-box {
+    height: 100px;
+    width: 71.5vw !important;
+    margin: auto !important;
+}
 
+.input-field {
+    margin-top: 0px !important;
+}
+
+.search-btns {
+    border-radius: 25px !important;
+}
