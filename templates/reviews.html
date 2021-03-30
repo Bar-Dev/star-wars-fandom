@@ -8,8 +8,8 @@
         <li>
             <div class="row">
                 <div class="collapsible-header col s12">
-                    <div class="col s4">
-                        <h4><i class="{{ reviews.icon_name }}"></i>{{ reviews.review_name }}</h4>
+                    <div class="col s6 film-title">
+                        <h4><i class="{{ reviews.icon_name }}"></i>  {{ reviews.review_name }}</h4>
                     </div>
                     <div class="col s3">
                         <p>{{ reviews.film_subtitle }}</p>
@@ -37,6 +37,8 @@
                 <h5>ERA: </h5><h6>{{ reviews.review_era }}</h6><br>
                 <p>{{ reviews.review_description }}</p>
                 <p><em>by: {{ reviews.reviewed_by }}</em></p>
+            </div>
+            <div id="film-order">
             </div>
             </li>
         {% endfor %}

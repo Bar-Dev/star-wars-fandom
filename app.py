@@ -22,7 +22,7 @@ mongo = PyMongo(app)
 # Main Reviews page
 @app.route("/get_reviews")
 def get_reviews():
-    reviews = list(mongo.db.reviews.find().sort("review_name", 1))
+    reviews = list(mongo.db.reviews.find().sort("film_order", 1))
     return render_template("reviews.html", reviews=reviews)
 
 
@@ -162,12 +162,11 @@ def add_review():
         # Populate DB with Review information
         reviews = {
             "review_name": request.form.get("review_name"),
-            "film_name": request.form.get("film_name"),
             "film_subtitle": request.form.get("film_subtitle"),
-            "review_era": request.form.get("review_era"),
             "review_description": request.form.get("review_description"),
             "icon_name": request.form.get("icon_name"),
-            "reviewed_by": session["user"]
+            "reviewed_by": session["user"],
+            "film_order": request.form.get("film_order")
         }
         # Add Review to DB
         mongo.db.reviews.insert_one(reviews)

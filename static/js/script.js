@@ -67,7 +67,7 @@ function filmSelected() {
             document.getElementById("film_subtitle").innerHTML = "Return of the Jedi";
         } else if (selectedFilm === "Star Wars VII") {
             document.getElementById("film_subtitle").innerHTML = "The Force Awakens";
-        } else if (selectedFilm === "Star Wars VII") {
+        } else if (selectedFilm === "Star Wars VIII") {
             document.getElementById("film_subtitle").innerHTML = "The Last Jedi";
         } else if (selectedFilm === "Star Wars IX") {
             document.getElementById("film_subtitle").innerHTML = "The Rise of Skywalker";
@@ -75,6 +75,34 @@ function filmSelected() {
             document.getElementById("film_subtitle").innerHTML = "Please Select Film";
         }
     }
+
+
+// Function to input subtitle based on selected File Title
+function filmOrder() {
+    var selectedFilm = document.getElementById("review_name").value;
+        if (selectedFilm === "Star Wars I") {
+            document.getElementById("film_order").textContent = 1;
+            document.getElementById("film_order").innerHTML = 1;
+        } else if (selectedFilm === "Star Wars II") {
+            document.getElementById("film_order").textContent = 2;
+        } else if (selectedFilm === "Star Wars III") {
+            document.getElementById("film_order").innerHTML = 3;
+        } else if (selectedFilm === "Star Wars IV") {
+            document.getElementById("film_order").innerHTML = 4;
+        } else if (selectedFilm === "Star Wars V") {
+            document.getElementById("film_order").innerHTML = 5;
+        } else if (selectedFilm === "Star Wars VI") {
+            document.getElementById("film_order").innerHTML = 6;
+        } else if (selectedFilm === "Star Wars VII") {
+            document.getElementById("film_order").innerHTML = 7;
+        } else if (selectedFilm === "Star Wars VIII") {
+            document.getElementById("film_order").innerHTML = 8;
+        } else if (selectedFilm === "Star Wars IX") {
+            document.getElementById("film_order").innerHTML = 9;
+        } else {
+            document.getElementById("film_order").innerHTML = 0;
+        }
+    }    
 
     
 // Function to play particular audio clip on load
@@ -91,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }; 
 });
 
+// Play & Pause Light Music
 function stopLight() {
     if (audioLight.paused) {
         audioLight.play();
@@ -99,6 +128,7 @@ function stopLight() {
     }
 };
 
+// Play & Pause Dark Music
 function stopDark() {
     if (audioDark.paused) {
         audioDark.play();

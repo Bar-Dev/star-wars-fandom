@@ -15,6 +15,7 @@ body {
     width: 400px;
     height: auto;
     padding-top: 10px;
+    margin-left: 10px;
 }
 
 .main-title {
@@ -144,4 +145,13 @@ input, textarea {
     background-color: rgb(4, 4, 70) !important;
     margin-left: 50px;
 }
+
+.film-title {
+    margin-left: 5px;
+}
+
+#film-order, .film-order {
+    display: none;
+}
+
 
