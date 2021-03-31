@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     
-    <div class="card-panel">
+    <div class="card-panel panel-layout">
         <div class="row">
             <div class="profile-layout">
                 <div class="col s3 offset-s2">
@@ -13,28 +13,30 @@
                     </div>
                     <div class="h3">
                         <h5>
-                            <!-- Audio clip to be played is based on the 
-                                "side" the User has chosen -->
+
+            <!-- Audio clip to be played is based on the "side" the User has chosen -->
                         <span id="audio">{{ sides }}</span> {{ username }}'s Profile
                         </h5>
                     </div>
                 </div>
             </div>
         </div>
+        
         {% if session.user == user.username %}
             <!-- Only session user can edit their profile -->
         <div class="row">
             <div class="col s3 offset-s2 pro-edit-outer">
-                <a class="pro-edit waves-effect waves-light btn-large"
+                <a class="pro-edit waves-effect waves-light btn-large buttons buttons-ex"
                     href="{{ url_for('edit_user', user_id=user._id) }}">Edit</a>
+            </div>
+            <div class="col s3 offset-s2 pro-edit-outer">
+                <div id="audio-button">
+                    </div>
             </div>
         </div>
     </div>
 
         {% endif %}
-
-        <div id="audio-button">
-        </div>
     
 {% endblock %}
 

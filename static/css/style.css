@@ -58,6 +58,10 @@ body {
     margin-left: 10% !important;
 }
 
+.panel-layout{
+    margin-top: 100px
+}
+
 .dropbtn-sw:after {
   content: '\2807';
   font-size: 50px;
@@ -166,4 +170,15 @@ input, textarea {
 
 .search-btns {
     border-radius: 25px !important;
+}
+
+.buttons {
+    border-radius: 30px !important;
+    color: #fff !important;
+    height: 40px !important;
+    line-height: 0px !important;
+}
+
+.buttons-ex {
+    line-height: 40px !important;
 }

@@ -4,10 +4,10 @@
     const audioDark = new Audio("/static/sounds/dark-side.mp3");
 document.addEventListener("DOMContentLoaded", function(){
     if (soundClip === "Jedi Knight") {
-        document.getElementById("audio-button").innerHTML = `<button id="audio-control" class="pro-edit waves-effect waves-light btn-large" onclick="stopLight();">Pause Audio</button>`
+        document.getElementById("audio-button").innerHTML = `<button id="audio-control" class="pro-edit waves-effect waves-light btn-large buttons" onclick="stopLight();">Pause Audio</button>`
         audioLight.play();
     } else if (soundClip === "Sith Lord") {
-        document.getElementById("audio-button").innerHTML = `<button id="audio-control" class="pro-edit waves-effect waves-light btn-large" onclick="stopDark();">Pause Audio</button>`
+        document.getElementById("audio-button").innerHTML = `<button id="audio-control" class="pro-edit waves-effect waves-light btn-large buttons" onclick="stopDark();">Pause Audio</button>`
         audioDark.play();
     }; 
 });

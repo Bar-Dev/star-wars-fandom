@@ -17,6 +17,8 @@
                     <label for="icon_name"><i class="far fa-icons"></i> Icon</label>
                 </div>
             </div>
+
+    <!--  Film Selection -->
             <div class="row">
                 <div class="input-field col s12">
                     <select onchange="filmSelected(); filmOrder();" id="review_name" name="review_name" class="validate" required>
@@ -29,6 +31,8 @@
                     <label for="review_name"><i class="far fa-icons"></i> Film</label>
                 </div>
             </div>
+
+    <!--  Subtitle auto-selected based on Film -->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="film_subtitle" name="film_subtitle" class="validate" readonly>
@@ -36,6 +40,8 @@
                         <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
                 </div>
             </div>
+
+    <!--  Auto-assigned film order to keep list sorted properly -->
             <div class="row film-order">
                 <div class="input-field col s12">
                     <textarea id="film_order" name="film_order" class="validate" readonly>
@@ -43,6 +49,8 @@
                         <label for="film_order"></label>
                 </div>
             </div>
+
+    <!--  Film Description, User input -->
             <div class="row">
                 <div class="input-field col s12">
                     <textarea id="review_description" name="review_description" 
@@ -51,6 +59,8 @@
                     <label for="review_description"><i class="fal fa-file-alt"></i> Description</label>
                 </div>
             </div>
+            
+    <!--  Add review to list -->
             <div class="row">
                 <div class="col s12 center-align">
                     <button type="submit" class="btn-large">
