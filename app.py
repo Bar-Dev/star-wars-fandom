@@ -19,6 +19,13 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+# Home Page
+@app.route("/home")
+def home():
+    return render_template("home.html")
+
+
+@app.route("/")
 # Main Reviews page
 @app.route("/get_reviews")
 def get_reviews():
@@ -29,7 +36,16 @@ def get_reviews():
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
-    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    # reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    regex_query = {'$regex': '.*{0}.*'.format(query), '$options': 'i'}
+    reviews = list(mongo.db.reviews.find(
+            {"$or": [
+                {"review_name": regex_query},
+                {"film_subtitle": regex_query},
+                {"review_description": regex_query},
+                {"reviewed_by": regex_query}
+            ]}
+        ))
     return render_template("reviews.html", reviews=reviews)
 
 
@@ -113,7 +129,12 @@ def profile(username):
         user = mongo.db.users.find_one(
             {"username": session["user"]})
         return render_template(
-            "profile.html", username=username, sides=sides, user=user, profile_image=profile_image)
+            "profile.html",
+            username=username,
+            sides=sides,
+            user=user,
+            profile_image=profile_image
+        )
 
     return redirect(url_for("login"))
 
@@ -122,10 +143,8 @@ def profile(username):
 def view_profiles(username):
     user = mongo.db.users.find_one(
         {"username": username})
-    sides = mongo.db.users.find_one(
-        {"username": request.form.get("username")})
-    profile_image = mongo.db.users.find_one(
-        {"username": request.form.get("username")})
+    sides = user["sides"]
+    profile_image = user["profile_image"]
     return render_template(
         "user_profile.html", username=username, sides=sides, user=user, profile_image=profile_image)
 
