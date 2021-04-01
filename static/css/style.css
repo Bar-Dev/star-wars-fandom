@@ -219,9 +219,28 @@ input, textarea {
     padding-top: 20px;
     color: #fff;
     background-color: rgb(4, 4, 70) !important;
-    margin-top: 50px;
+}
+
+.popout {
+    margin-bottom: 100px !important;
+}
+
+.hero-image img {
+  min-width: 100%;  
 }
 
 .hero-image {
-    height: 600px;
+  position: relative;
+  text-align: center;
+  color:rgb(4, 4, 70) !important;
+  min-width: 100%;
+  font-size: 20px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
