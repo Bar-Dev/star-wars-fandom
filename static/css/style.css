@@ -24,6 +24,11 @@ body {
     color: rgb(4, 4, 70) !important;
 }
 
+.flash-panel {
+  color: white;
+  text-shadow: 1px 1px 2px navy, 0 0 25px blue, 0 0 5px darkblue;
+}
+
 .collapsible {
     width: 75vw;
     margin: auto;
@@ -58,8 +63,9 @@ body {
     margin-left: 10% !important;
 }
 
-.panel-layout{
-    margin-top: 100px
+.panel-layout, .card-panel {
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 .dropbtn-sw:after {
@@ -168,8 +174,31 @@ input, textarea {
     margin-top: 0px !important;
 }
 
+.fa-search:before {
+    font-size: 14px;
+}
+
 .search-btns {
-    border-radius: 25px !important;
+    border-radius: 30px !important;
+    color: #fff !important;
+    line-height: 0px !important;
+    background-color: navy !important;
+}
+
+.red {
+    background-color: red !important;
+    border-radius: 30px !important;
+}
+
+.red-pro {
+    border-radius: 30px !important;
+    color: #fff !important;
+    height: 40px !important;
+    line-height: 0px !important;
+    background-color: red !important;
+    width: 100px !important;    
+    line-height: 41px !important;
+    padding: 0px !important;
 }
 
 .buttons {
@@ -177,6 +206,19 @@ input, textarea {
     color: #fff !important;
     height: 40px !important;
     line-height: 0px !important;
+    background-color: navy !important;
+    width: 200px !important;
+    margin-left: 50% !important;
+    transform: translate(-50%) !important;
+}
+
+.buttons-pro {
+    border-radius: 30px !important;
+    color: #fff !important;
+    height: 40px !important;
+    line-height: 0px !important;
+    background-color: navy !important;
+    width: 200px !important;
 }
 
 .buttons-ex {
@@ -243,4 +285,45 @@ input, textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.duo-btn-align {
+    margin: auto;
+}
+
+.modal {
+    background-color: white;
+    color: navy;
+}
+
+.modal-footer {
+    text-align: center !important;
+    border-radius: 30px !important;
+    color: #fff !important;
+    height: 40px !important;
+    line-height: 24px !important;
+    background-color: navy !important;
+    width: 200px !important;
+    margin-left: 50% !important;
+    transform: translate(-50%) !important;
+    margin-bottom: 20px;
+}
+
+.modal-close {
+    font-size: 25px;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    }
+
+textarea {
+    padding-top: 10px !important;
+    border: slategray;
 }

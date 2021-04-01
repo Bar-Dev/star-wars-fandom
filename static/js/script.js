@@ -1,23 +1,14 @@
 // Materialize form function
 $(document).ready(function(){
     $("select").formSelect();
-});
-
 // Materialize navbar function
-$(document).ready(function(){
     $(".sidenav").sidenav();
-});
-
 // Materialize collapsible function
-$(document).ready(function(){
     $('.collapsible').collapsible();
-});
-
 // Materialize tooltipped function
-$(document).ready(function(){
     $('.tooltipped').tooltip();
-});
-
+// Materialize Modal function
+    $('.modal').modal();
 // Materialize workaround from CI for dropdown lists turning red if unchecked
 $('.dropdown-trigger').dropdown();
 
@@ -48,6 +39,7 @@ $('.dropdown-trigger').dropdown();
             }
         });
     };
+});
 
 // Function to input subtitle based on selected File Title
 function filmSelected() {

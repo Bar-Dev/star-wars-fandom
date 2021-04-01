@@ -8,7 +8,7 @@
     <!--  Icon Selection -->
             <div class="row">
                 <div class="input-field col s12">
-                    <select id="icon_name" name="icon_name" class="validate" required>
+                    <select id="icon_name" name="icon_name" class="validate form-border" required>
                     <option value="" disabled selected>Choose your option</option>
                     {% for icon in icons %}
                         <option value="{{ icon.icon_name }}" data-icon="{{ icon.icon_image }}">{{ icon.icon_font }}</option>
@@ -35,7 +35,7 @@
     <!--  Subtitle auto-selected based on Film -->
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="film_subtitle" name="film_subtitle" class="validate" readonly>
+                    <textarea id="film_subtitle" name="film_subtitle" class="validate form-border" placeholder="Please select film" readonly>
                         </textarea>
                         <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
                 </div>
@@ -62,8 +62,8 @@
             
     <!--  Add review to list -->
             <div class="row">
-                <div class="col s12 center-align">
-                    <button type="submit" class="btn-large">
+                <div class="col s12">
+                    <button type="submit" class="btn-large buttons">
                         Add Review <i class="fal fa-comment-lines"></i>
                     </button>
                 </div>

@@ -11,9 +11,9 @@
                     <label for="query">Search Reviews</label>
                 </div>
                 <div class="input-field col s12 m4">
-                    <a href="{{ url_for('get_reviews') }}" class="search-btns red btn text-shadow">Reset</a>
-                    <button type="submit" class="search-btns light-blue darken-1 btn text-shadow">
-                        <i class="fas fa-search left"></i> Search
+                    <a href="{{ url_for('get_reviews') }}" class="red btn text-shadow">Reset</a>
+                    <button type="submit" class="search-btns btn">
+                        <i class="fas fa-search right"></i> Search
                     </button>
                 </div>
             </div>
@@ -40,13 +40,23 @@
                         <button class="dropbtn-sw"></button>
                         <div class="dropdown-content-sw">
                             <a href="{{ url_for('edit_review', reviews_id=reviews._id) }}">Edit</a>
-                            <a href="{{ url_for('delete_review', reviews_id=reviews._id) }}">Delete</a>
+                            <a class="modal-trigger" href="#modal-delete">Delete</a>
                         </div>
                     </div>
                 </div>
-                {% else %}
-                    <div class="col s1">
+                <!-- Modal Structure -->
+                <div id="modal-delete" class="modal">
+                    <div class="modal-content">
+                        <h4 class="center-align">Are you sure you want to delete this review?</h4>
+                        <p class="center-align">Please confirm:</p>
                     </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for('delete_review', reviews_id=reviews._id) }}" class="center-align modal-close">Agree</a>
+                    </div>
+                </div>
+                {% else %}
+                <div class="col s1">
+                </div>
                 {% endif %}
                 </div>
             </div>
@@ -59,6 +69,5 @@
             </li>
         {% endfor %}
     </ul>
-    
 
 {% endblock %}
