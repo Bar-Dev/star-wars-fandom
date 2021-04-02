@@ -98,7 +98,11 @@ body {
     margin-left: 10% !important;
 }
 
-.panel-layout, .card-panel {
+.panel-layout {
+    margin-top: 50px;
+}
+
+.card-panel {
     margin-top: 50px;
     margin-bottom: 100px;
 }
@@ -176,6 +180,14 @@ input, textarea {
     height: 200px;
     overflow: hidden;
     border: solid 5px navy;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.pro-name {
+    margin: 0px 0px !important;
+    padding-left: 0px !important;
 }
 
 .profile-layout {
@@ -207,6 +219,18 @@ input, textarea {
 
 .input-field {
     margin-top: 0px !important;
+}
+
+textarea {
+    border-bottom: 1px solid #9e9e9e !important;
+}
+
+#film-subtitle span {
+    color: blue;
+}
+
+input.select-dropdown {
+    border-bottom: 1px solid #9e9e9e !important;
 }
 
 .fa-search:before {
@@ -256,8 +280,22 @@ input, textarea {
     width: 200px !important;
 }
 
-.buttons-ex {
+.button-pro {
+    border-radius: 30px !important;
+    color: #fff !important;
+    height: 40px !important;
     line-height: 40px !important;
+    background-color: navy !important;
+    width: 200px !important;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 30px);
+}
+
+#audio-button {
+    position: relative;
+    left: 40%;
+    transform: translate(-50%, 30px);
 }
 
 .list-inline-item {
@@ -341,4 +379,14 @@ main {
 textarea {
     padding-top: 10px !important;
     border: slategray;
+}
+
+.panel-box-one {
+    width: 200px;
+    height: 200px;
+}
+
+.panel-box-two {
+    width: 200px;
+    height: 100px;
 }

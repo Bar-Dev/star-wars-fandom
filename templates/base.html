@@ -40,9 +40,8 @@
     <!--  Materialize side Navbar with dropdown -->
         <ul class="sidenav" id="mobile-demo">
                 <li><a href="{{ url_for('get_reviews') }}">Reviews</a></li>
-                <li><a href="{{ url_for('test') }}">Test</a></li>
             {% if session.user %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a id="soundClip" href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="{{ url_for('add_review') }}">Add Review</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
@@ -73,41 +72,39 @@
     <footer class="page-footer">
           <div class="container">
             <div class="row">
-              <div class="col s12 social-link-spacing">
-                <h5 class="white-text">Links</h5>
-                <div class="row">
-                <ul class="list-inline social-links">
-                        <li class="list-inline-item col s1">
+                <div class="row list-inline social-links center-align">
+                <ul class="center-align">
+                        <li class="list-inline-item col s2">
                             <a target="_blank" href="https://www.facebook.com/">
                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                             </a>
                         </li>
-                        <li class="list-inline-item col s1">
+                        <li class="list-inline-item col s2">
                             <a target="_blank" href="https://twitter.com/?lang=en">
                             <i class="fab fa-twitter" aria-hidden="true"></i>
                             <span class="sr-only">Twitter</span>
                             </a>
                         </li>
-                        <li class="list-inline-item col s1">
+                        <li class="list-inline-item col s2">
                             <a target="_blank" href="https://ie.linkedin.com/">
                             <i class="fab fa-linkedin" aria-hidden="true"></i>
                             <span class="sr-only">LinkedIn</span>
                             </a>
                         </li>
-                        <li class="list-inline-item col s1">
+                        <li class="list-inline-item col s2">
                             <a target="_blank" href="https://www.pinterest.com/">
                             <i class="fab fa-pinterest" aria-hidden="true"></i>
                             <span class="sr-only">Pinterest</span>
                             </a>
                         </li>
-                        <li class="list-inline-item col s1">
+                        <li class="list-inline-item col s2">
                             <a target="_blank" href="https://www.instagram.com/?hl=en">
                             <i class="fab fa-instagram" aria-hidden="true"></i>
                             <span class="sr-only">Instagram</span>
                             </a>
                         </li>
-                        <li class="list-inline-item col s1">
+                        <li class="list-inline-item col s2">
                             <a target="_blank" href="https://www.youtube.com/">
                             <i class="fab fa-youtube" aria-hidden="true"></i>
                             <span class="sr-only">YouTube</span>
@@ -117,9 +114,8 @@
                 </div>
               </div>
             </div>
-          </div>
           <div class="footer-copyright">
-            <div class="container">
+            <div class="container center-align">
             © 2021 Star Media
             <a class="grey-text text-lighten-4 right" href="#!"></a>
             </div>
