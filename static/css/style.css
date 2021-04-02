@@ -18,6 +18,41 @@ body {
     margin-left: 10px;
 }
 
+.main-img {
+   background-image: url("/static/images/falcon3.png"); 
+   width: 70vw;
+   height: 50vw;
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position: center;
+}
+
+.review-link {
+    border-radius: 30px !important;
+    color: #fff !important;
+    height: 40px !important;
+    line-height: 0px !important;
+    background-color: navy !important;
+    position: relative;
+    left: 38%;
+    margin-top: 60%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color:rgb(4, 4, 70) !important;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+
 .main-title {
     text-align: center;
     font-weight: 700;
@@ -265,26 +300,6 @@ input, textarea {
 
 .popout {
     margin-bottom: 100px !important;
-}
-
-.hero-image img {
-  min-width: 100%;  
-}
-
-.hero-image {
-  position: relative;
-  text-align: center;
-  color:rgb(4, 4, 70) !important;
-  min-width: 100%;
-  font-size: 20px;
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .duo-btn-align {
