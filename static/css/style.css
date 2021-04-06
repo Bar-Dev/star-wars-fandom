@@ -8,7 +8,7 @@ body {
 }
 
 .nav-wrapper, .collapsible-header {
-    background-color: rgb(4, 4, 70) !important;
+    background-color: #040446 !important;
 }
 
 .nav-wrapper img{
@@ -124,7 +124,7 @@ body {
   position: absolute;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px #00000033;
   z-index: 1;
 }
 
@@ -179,7 +179,7 @@ input, textarea {
     width: 200px;
     height: 200px;
     overflow: hidden;
-    border: solid 5px navy;
+    border: solid 5px #000080;
     position: relative;
     left: 50%;
     transform: translate(-50%);
@@ -245,7 +245,7 @@ input.select-dropdown {
 }
 
 .red {
-    background-color: red !important;
+    background-color: #ff0000 !important;
     border-radius: 30px !important;
 }
 

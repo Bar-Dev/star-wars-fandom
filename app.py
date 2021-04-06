@@ -49,11 +49,6 @@ def search():
     return render_template("reviews.html", reviews=reviews)
 
 
-@app.route("/test")
-def test():
-    return render_template("test.html")
-
-
 @app.route("/register", methods=["GET", "POST"])
 # User registration
 def register():
@@ -211,10 +206,11 @@ def edit_review(reviews_id):
         # Allow session user to edit DB
         submit = {
             "review_name": request.form.get("review_name"),
-            "review_subtitle": request.form.get("review_subtitle"),
+            "film_subtitle": request.form.get("film_subtitle"),
             "review_description": request.form.get("review_description"),
             "icon_name": request.form.get("icon_name"),
-            "reviewed_by": session["user"]
+            "reviewed_by": session["user"],
+            "film_order": request.form.get("film_order")
         }
         # Send updated review info to DB
         mongo.db.reviews.update({"_id": ObjectId(reviews_id)}, submit)
