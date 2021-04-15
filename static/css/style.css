@@ -19,9 +19,9 @@ body {
 }
 
 .main-img {
-   background-image: url("/static/images/falcon3.png"); 
-   width: 70vw;
-   height: 50vw;
+   background-image: url("/static/images/falcon_3.jpg"); 
+   width: 100%;
+   height: auto;
    background-repeat: no-repeat;
    background-size: contain;
    background-position: center;
