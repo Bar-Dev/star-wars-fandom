@@ -26,6 +26,13 @@ def home():
 
 
 @app.route("/")
+# Test Page
+@app.route("/test")
+def test():
+    return render_template("test.html")
+
+
+@app.route("/")
 # Main Reviews page
 @app.route("/get_reviews")
 def get_reviews():
