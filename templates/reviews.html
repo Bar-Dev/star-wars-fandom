@@ -25,17 +25,17 @@
         <li>
             <div class="row">
                 <div class="collapsible-header col s12">
-                    <div class="col s6 film-title">
-                        <h4><i class="{{ reviews.icon_name }}"></i>  {{ reviews.review_name }}</h4>
+                    <div class="col s6 m4 l5 film-title">
+                        <h4><i class="{{ reviews.icon_name }}"></i> {{ reviews.review_name }}</h4>
                     </div>
-                    <div class="col s3">
+                    <div class="col s3 m4 l4">
                         <p>{{ reviews.film_subtitle }}</p>
                     </div>
-                    <div class="col s2">
+                    <div class="col s2 m3 l2 review-name">
                         <p><a href="{{ url_for('view_profiles', username=reviews.reviewed_by) }}" class="tooltipped" data-position="bottom" data-tooltip="View Profile"><em>by: {{ reviews.reviewed_by }}</em></a></p>
                     </div>
                 {% if session.user|lower == reviews.reviewed_by|lower %}
-                <div class="col s1">
+                <div class="col s1 m1 l1">
                     <div class="dropdown-sw">
                         <button class="dropbtn-sw"></button>
                         <div class="dropdown-content-sw">

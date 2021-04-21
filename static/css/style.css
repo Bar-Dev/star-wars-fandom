@@ -54,7 +54,7 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   color:rgb(229 208 45) !important;
-  font-size: 25px;
+  font-size: 2vw;
   font-weight: 600;
 }
 
@@ -117,6 +117,12 @@ body {
 
 .collapsible-body {
     color: navy;
+}
+
+.review-name {
+    text-align: end;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
 
 .add-review-title {
@@ -419,4 +425,52 @@ textarea {
 .panel-box-two {
     width: 200px;
     height: 100px;
+}
+
+/* ------ Media Queries ------ */
+
+@media(max-width: 992px) {
+    h4 {
+    font-size: 1.6rem;
+    }
+    .film-title h4 {
+    font-size: 1.6rem;
+    }
+    .film-title {
+    margin-left: 0px;
+    }
+    .collapsible-header i {
+    width: 2rem;
+    font-size: 1.6rem;
+    display: inline-block;
+    text-align: center;
+    margin-right: 1rem;
+    line-height: 0;
+    }
+    .dropbtn-sw:after {
+    font-size: 40px;
+    left: 25px;
+    }
+}
+
+
+@media(max-width: 720px) {
+    #bottom-center {
+    padding: 10px;
+    font-size: 10px;
+    height: 25px !important;
+    }
+    .nav-wrapper img{
+    width: 300px;
+    }
+    .nav {
+    height: 56px !important;
+    }
+}
+
+
+@media(max-width: 600px) {
+.centered h3 {
+    font-size: 6vw;
+    }
 }
