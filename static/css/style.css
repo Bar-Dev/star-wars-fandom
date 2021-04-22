@@ -427,14 +427,36 @@ textarea {
     height: 100px;
 }
 
+h4 span {
+    font-size: 20px;
+}
+
+.microscope:before {
+    font-size: 14px;
+    display: flex;
+    margin-left: 5px;
+}
+
 /* ------ Media Queries ------ */
+
+@media(max-width: 1124px) {
+    .film-title h4 span {
+    font-size: 1.2rem;
+    }
+    .film-title h4 {
+    font-size: 1.8rem;
+    }
+}
 
 @media(max-width: 992px) {
     h4 {
     font-size: 1.6rem;
     }
     .film-title h4 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    }
+    .film-title h4 span {
+    font-size: 1.0rem;
     }
     .film-title {
     margin-left: 0px;
@@ -448,11 +470,62 @@ textarea {
     line-height: 0;
     }
     .dropbtn-sw:after {
-    font-size: 40px;
-    left: 25px;
+    font-size: 30px;
+    left: 20px;
+    top: 5px;
+    }
+    .sub-align {
+    text-align: center !important;
+    font-size: smaller !important;
+    }
+    .review-name {
+    font-size: smaller !important;
+    }
+    .collapsible-header i {
+    width: 0.8rem;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-right: 0.6rem;
+    }
+    .collapsible {
+    width: 88vw;
+    }
+    .search-box {
+    width: 80vw !important;
     }
 }
 
+@media(max-width: 800px) {
+    .film-title h4 span {
+    font-size: 0.8rem;
+    }
+    .row .col.s1 {
+    padding: 0px;
+    }
+}
+
+@media(min-width: 640px) {
+    .sub-drop {
+    display: none;
+    }
+}
+
+@media(max-width: 640px) {
+    .sub-remove {
+    display: none;
+    }
+}
+
+@media(max-width: 754px) {
+    .btn-stack {
+    height: 26px;
+    margin-top: 4px;
+    line-height: 26px;
+    }
+    .microscope-two {
+    display: none;
+    }
+}
 
 @media(max-width: 720px) {
     #bottom-center {
@@ -466,11 +539,82 @@ textarea {
     .nav {
     height: 56px !important;
     }
+    .home-h2 {
+    font-size: 30px;
+    }
+    .dropbtn-sw:after {
+    left: 15px;
+    }
+    .collapsible-header i {
+    width: 0.8rem;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-right: 0.6rem;
+    }
+    .film-title h4 {
+    font-size: 1.2rem;
+    }
+    .film-title h4 span {
+    font-size: 0.8rem;
+    }
+    .film-title {
+    padding-left: 0px !important;
+    }
+    .collapsible-header {
+    line-height: 1.2;
+    }
 }
 
 
 @media(max-width: 600px) {
-.centered h3 {
+    .centered h3 {
     font-size: 6vw;
+    }
+    .social-links li a i {
+    width: 30px;
+    height: 30px;
+    padding: 5px 0;
+    font-size: 20px;
+    }
+    .nav-wrapper img {
+    width: 250px;
+    }
+    nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    font-size: 10px;
+    }
+    .dropbtn-sw:after {
+    left: 10px;
+    }
+}
+
+@media (max-width: 490px) {
+    #bottom-center {
+    padding: 7px;
+    font-size: 7px;
+    height: 15px !important;
+    }
+    .dropbtn-sw:after {
+    left: 5px;
+    }
+    .btn-stack {
+    height: 16px;
+    margin-top: 4px;
+    line-height: 16px;
+    font-size: smaller;
+    }
+    .nav-wrapper img {
+    width: 200px;
+    }
+}
+
+@media (max-width: 510px) {
+    .review-name a {
+    font-size: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .collapsible {
+    width: 90vw;
     }
 }

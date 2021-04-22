@@ -6,14 +6,13 @@
         <div class="row card-panel grey lighten-5 search-box">
             <div class="valign-wrapper center-align">
                 <div class="input-field col s12 m8">
-                    <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Reviews</label>
+                    <label for="query">Search Reviews <i class="fas fa-search microscope prefix light-blue-text text-darken-4"></i></label>
                 </div>
                 <div class="input-field col s12 m4">
-                    <a href="{{ url_for('get_reviews') }}" class="red btn text-shadow">Reset</a>
-                    <button type="submit" class="search-btns btn">
-                        <i class="fas fa-search right"></i> Search
+                    <a href="{{ url_for('get_reviews') }}" class="red btn-stack btn text-shadow">Reset</a>
+                    <button type="submit" class="search-btns btn-stack btn">
+                        <i class="fas microscope-two fa-search right"></i> Search
                     </button>
                 </div>
             </div>
@@ -25,13 +24,13 @@
         <li>
             <div class="row">
                 <div class="collapsible-header col s12">
-                    <div class="col s6 m4 l5 film-title">
-                        <h4><i class="{{ reviews.icon_name }}"></i> {{ reviews.review_name }}</h4>
-                    </div>
-                    <div class="col s3 m4 l4">
+                    <div class="col s8 m8 l8 film-title">
+                        <h4><i class="{{ reviews.icon_name }}"></i> {{ reviews.review_name }}  <span class="sub-remove"> - {{ reviews.film_subtitle }}</span></h4>
+                    </div><!--
+                    <div class="col s0 m4 l4 sub-align">
                         <p>{{ reviews.film_subtitle }}</p>
-                    </div>
-                    <div class="col s2 m3 l2 review-name">
+                    </div>-->
+                    <div class="col s3 m3 l3 review-name">
                         <p><a href="{{ url_for('view_profiles', username=reviews.reviewed_by) }}" class="tooltipped" data-position="bottom" data-tooltip="View Profile"><em>by: {{ reviews.reviewed_by }}</em></a></p>
                     </div>
                 {% if session.user|lower == reviews.reviewed_by|lower %}
@@ -61,6 +60,9 @@
                 </div>
             </div>
             <div class="collapsible-body">
+                <div class="col s0 m4 l4 sub-drop">
+                    <p>{{ reviews.film_subtitle }}</p>
+                </div>
                 <p>{{ reviews.review_description }}</p>
                 <p><em>by: {{ reviews.reviewed_by }}</em></p>
             </div>
