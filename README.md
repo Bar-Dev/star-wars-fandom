@@ -220,6 +220,10 @@ The password is coded into a hash address with the use of Werkzeug making it un-
   - Used to edit the images.
 
 
+# Testing
+
+Full documentation of all testing can be viewed [here](https://github.com/Bar-Dev/star-wars-fandom/tree/master/testing.md)
+
 # Deployment
 
 The source code for this site is in GitHub. Heroku was used to deploy the site. MongoDB was used for the database.
