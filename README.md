@@ -57,22 +57,22 @@ As you can see from the Wireframes there was a few other elements I wanted to ad
 For now I toned things back and went for a more minimalistic approach to give the user a good feel of what the website is about and keeping it specifically to film reviews. By generating a fan base and followers now to the website I believe the additional items such as the Chat-Room and Memorabilia displays will be more welcome in the future and keep peoples attention to an ever evolving site.
 
 
-<!---
+
 ### Colors 
 
 The following colors have formed the main design of the website:
 
-<img src="./assets/images/reilly-colours.png" style="margin: 0;">
+<img src="./assets/images/sw-colors.png" style="margin: 0;">
 
 **List of colors used are:**
-* #F7D165 Orange Yellow Crayola
-* #555F7B Independence
-* #FFFFFF White
-* #777777 Sonic Silver
+* #040446 Midnight Blue
+* #E5D12C Citrine
+* #000080 Navy Blue
+* #FF0000 Red
 * #2F0147 Russian Violet
 
-The predominant color used for this website was Independence apart from the mainbackground colour of white. 
-This was chosen to provide a nice contrast with the various images used and maintain a dominant look and feel.
+The predominant color used for this website was Midnight Blue apart from the mainbackground colour of white. 
+This was chosen to provide a vibrant contrast on the dropdown menus and maintain a dominant look and feel.
 
 ### Fonts
 
@@ -83,7 +83,7 @@ Font weights used were:
 * 300
 * 400
 * 600
---->
+
 
 
 ## User-stories

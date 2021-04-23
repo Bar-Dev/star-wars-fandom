@@ -94,7 +94,7 @@ body {
 
 .flash-panel {
   color: white;
-  text-shadow: 1px 1px 2px navy, 0 0 25px blue, 0 0 5px darkblue;
+  text-shadow: 1px 1px 2px #000080, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .collapsible {
