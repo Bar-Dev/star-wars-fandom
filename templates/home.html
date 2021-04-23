@@ -2,17 +2,17 @@
 {% block content %}
 
 <div class="container-fluid">
-    <img src="/static/images/falcon_3.jpg" alt="Snow" style="width:100%;">
+    <img src="/static/images/falcon_3.jpg" alt="Millenium Falcon" style="width:100%;">
     <div class="centered">"'It’s the ship that made the Kessel run in less than twelve parsecs. I’ve outrun Imperial
         starships. Not the local bulk cruisers, mind you. I’m talking about the big Corellian ships, now. She’s fast
         enough for you, old man.'"<br> — Han Solo<br>
     </div>
-    <button id="bottom-center" onclick="window.location.href='reviews.html'">VIEW STAR WARS REVIEWS</button>
+    <a id="bottom-center" href="{{ url_for('get_reviews') }}">VIEW STAR WARS REVIEWS</a>
 </div>
 <h2 class="home-h2">Coming Soon....</h2>
 <div class="row">
     <div class="col s8 offset-s2 m4 offset-m1 home-container">
-        <img class="home-box" src="/static/images/sw-space.jpeg" alt="Snow" style="min-width:100%;">
+        <img class="home-box" src="/static/images/sw-space.jpeg" alt="Space" style="min-width:100%;">
         <div class="centered">
             <h3 class="box-color">
                 <i class="fal fa-comment-lines"></i><br>
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="col s8 offset-s2 m4 offset-m2 home-container">
-        <img class="home-box" src="/static/images/sw-memory.jpeg" alt="Snow" style="min-width:100%;">
+        <img class="home-box" src="/static/images/sw-memory.jpeg" alt="Star Wars Helmets" style="min-width:100%;">
         <div class="centered">
             <h3 class="box-color">
                 <i class="far fa-camera-movie"></i><br>
@@ -30,5 +30,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

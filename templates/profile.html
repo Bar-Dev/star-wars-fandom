@@ -1,43 +1,36 @@
-    {% extends "base.html" %}
-    {% block content %}
+{% extends "base.html" %}
+{% block content %}
+<div class="card-panel">
+    <div class="panel-layout">
+        <div class="row">
+            <div class="col s12 m6 panel-box-one">
+                <img id="pro-image" src="/static/images/{{ profile_image }}" alt="{{ profile_image }}">
+            </div>
+            <div class="col s12 m6 panel-box-one smallscreen-box">
 
-    <div class="card-panel">
-        <div class="panel-layout">
-            <div class="row">
+                <!--<div class="profile-title">-->
+                <h6>Account Name:</h6>
+                <h5>
 
-                <div class="col s12 m6 panel-box-one">
-                    <img id="pro-image" src="/static/images/{{ profile_image }}">
-                </div>
-
-                <div class="col s12 m6 panel-box-one smallscreen-box">
-                    <!--<div class="profile-title">-->
-                    <h6>Account Name:</h6>
-                    <h5>
                     <!-- Audio clip to be played is based on the "side" the User has chosen -->
                     <span id="audio">{{ sides }}</span> <strong>{{ username }}'s</strong> Profile
-                    </h5>
-                </div>
-
-                <div class="col s12 m6 panel-box-two">
-                    {% if session.user == user.username %}
-                    <a class="waves-effect waves-light btn-large button-pro"
-                        href="{{ url_for('edit_user', user_id=user._id) }}">Edit</a>
-                    {% endif %}
-                </div>
-                <div class="col s12 m6 panel-box-two">
-                
-                    <div id="audio-button">
-                    </div>
-                
+                </h5>
+            </div>
+            <div class="col s12 m6 panel-box-two">
+                {% if session.user == user.username %}
+                <a class="waves-effect waves-light btn-large button-pro"
+                    href="{{ url_for('edit_user', user_id=user._id) }}">Edit</a>
+                {% endif %}
+            </div>
+            <div class="col s12 m6 panel-box-two">
+                <div id="audio-button">
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-         
-
-        {% endblock %}
-
-        {% block scripts %}
-        <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
-        {% endblock %}
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/profile.js') }}"></script>
+{% endblock %}

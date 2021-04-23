@@ -1,38 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2 class="main-title" >REVIEWS</h2>
-    <form action="{{ url_for('search') }}" method="post" class="col s12">
-        <div class="row card-panel grey lighten-5 search-box">
-            <div class="valign-wrapper center-align">
-                <div class="input-field col s12 m8">
-                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                    <label for="query">Search Reviews <i class="fas fa-search microscope prefix light-blue-text text-darken-4"></i></label>
-                </div>
-                <div class="input-field col s12 m4">
-                    <a href="{{ url_for('get_reviews') }}" class="red btn-stack btn text-shadow">Reset</a>
-                    <button type="submit" class="search-btns btn-stack btn">
-                        <i class="fas microscope-two fa-search right"></i> Search
-                    </button>
-                </div>
+<h2 class="main-title" >REVIEWS</h2>
+<form action="{{ url_for('search') }}" method="post" class="col s12">
+    <div class="row card-panel grey lighten-5 search-box">
+        <div class="valign-wrapper center-align">
+            <div class="input-field col s12 m8">
+                <input type="text" name="query" id="query" minlength="3" class="validate" required>
+                <label for="query">Search Reviews <i class="fas fa-search microscope prefix light-blue-text text-darken-4"></i></label>
+            </div>
+            <div class="input-field col s12 m4">
+                <a href="{{ url_for('get_reviews') }}" class="red btn-stack btn text-shadow">Reset</a>
+                <button type="submit" class="search-btns btn-stack btn">
+                <i class="fas microscope-two fa-search right"></i> Search
+                </button>
             </div>
         </div>
-    </form>
+    </div>
+</form>
 
-    <ul class="collapsible popout">
-        {% for reviews in reviews %}
-        <li>
-            <div class="row">
-                <div class="collapsible-header col s12">
-                    <div class="col s8 m8 l8 film-title">
-                        <h4><i class="{{ reviews.icon_name }}"></i> {{ reviews.review_name }}  <span class="sub-remove"> - {{ reviews.film_subtitle }}</span></h4>
-                    </div><!--
-                    <div class="col s0 m4 l4 sub-align">
-                        <p>{{ reviews.film_subtitle }}</p>
-                    </div>-->
-                    <div class="col s3 m3 l3 review-name">
-                        <p><a href="{{ url_for('view_profiles', username=reviews.reviewed_by) }}" class="tooltipped" data-position="bottom" data-tooltip="View Profile"><em>by: {{ reviews.reviewed_by }}</em></a></p>
-                    </div>
+<ul class="collapsible popout">
+    {% for reviews in reviews %}
+    <li>
+        <div class="row">
+            <div class="collapsible-header col s12">
+                <div class="col s8 m8 l8 film-title">
+                    <h4><i class="{{ reviews.icon_name }}"></i> {{ reviews.review_name }}  <span class="sub-remove"> - {{ reviews.film_subtitle }}</span></h4>
+                </div>
+                <div class="col s3 m3 l3 review-name">
+                    <p><a href="{{ url_for('view_profiles', username=reviews.reviewed_by) }}" class="tooltipped" data-position="bottom" data-tooltip="View Profile"><em>by: {{ reviews.reviewed_by }}</em></a></p>
+                </div>
                 {% if session.user|lower == reviews.reviewed_by|lower %}
                 <div class="col s1 m1 l1">
                     <div class="dropdown-sw">
@@ -43,6 +40,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- Modal Structure -->
                 <div id="modal-delete" class="modal">
                     <div class="modal-content">
@@ -57,19 +55,20 @@
                 <div class="col s1">
                 </div>
                 {% endif %}
-                </div>
             </div>
-            <div class="collapsible-body">
-                <div class="col s0 m4 l4 sub-drop">
-                    <p>{{ reviews.film_subtitle }}</p>
-                </div>
-                <p>{{ reviews.review_description }}</p>
-                <p><em>by: {{ reviews.reviewed_by }}</em></p>
+        </div>
+        <div class="collapsible-body">
+            <div class="col s0 m4 l4 sub-drop">
+                <h6>Film Subtitle:</h6>
+                <p>{{ reviews.film_subtitle }}</p>
             </div>
-            <div id="film-order">
-            </div>
-            </li>
-        {% endfor %}
-    </ul>
-
+            <h6>Description:</h6>
+            <p>{{ reviews.review_description }}</p>
+            <p><em>reviewed by: {{ reviews.reviewed_by }}</em></p>
+        </div>
+        <div id="film-order">
+        </div>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}

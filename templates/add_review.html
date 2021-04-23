@@ -1,78 +1,77 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 {% block content %}
 
-    <h3 class="add-review-title"><i class="fal fa-sword-laser"></i>Add Review</h3>
+<h3 class="add-review-title"><i class="fal fa-sword-laser"></i>Add Review</h3>
+<div class="row card-panel">
+    <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
 
-    <div class="row card-panel">
-        <form class="col s12" method="POST" action="{{ url_for('add_review') }}">
-    <!--  Icon Selection -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <select id="icon_name" name="icon_name" class="validate form-border" required>
+        <!--  Icon Selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <select id="icon_name" name="icon_name" class="validate form-border" required>
                     <option value="" disabled selected>Choose your option</option>
                     {% for icon in icons %}
-                        <option value="{{ icon.icon_name }}" data-icon="{{ icon.icon_image }}">{{ icon.icon_font }}</option>
+                    <option value="{{ icon.icon_name }}" data-icon="{{ icon.icon_image }}">{{ icon.icon_font }}</option>
                     {% endfor %}
-                    </select>
-                    <label for="icon_name"><i class="far fa-icons"></i> Icon</label>
-                </div>
+                </select>
+                <label for="icon_name"><i class="far fa-icons"></i> Icon</label>
             </div>
-
-    <!--  Film Selection -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <select onchange="filmSelected(); filmOrder();" id="review_name" name="review_name" class="validate" required>
-                        <!-- Function assigns the subtitle based on film selection -->
-                    <option value="" disabled selected>Choose your option</option>
-                    {% for film in films %}
-                        <option value="{{ film.film_name }}">{{ film.film_name }}</option>
-                    {% endfor %}
-                    </select>
-                    <label for="review_name"><i class="far fa-icons"></i> Film</label>
-                </div>
-            </div>
-
-    <!--  Subtitle auto-selected based on Film -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="film_subtitle" name="film_subtitle" class="validate form-border" placeholder="Please select film" readonly>Please select Film above
-                        </textarea>
-                        <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
-                </div>
-            </div>
-
-    <!--  Auto-assigned film order to keep list sorted properly -->
-            <div class="row film-order">
-                <div class="input-field col s12">
-                    <textarea id="film_order" name="film_order" class="validate" readonly>
-                        </textarea>
-                        <label for="film_order"></label>
-                </div>
-            </div>
-
-    <!--  Film Description, User input -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="review_description" name="review_description" 
-                        minlength="5" maxlength="400" class="materialize-textarea 
-                            validate" required></textarea>
-                    <label for="review_description"><i class="fal fa-file-alt"></i> Description</label>
-                </div>
-            </div>
-            
-    <!--  Add review to list -->
-            <div class="row">
-                <div class="col s12">
-                    <button type="submit" class="btn-large buttons">
-                        Add Review <i class="fal fa-comment-lines"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
         </div>
 
-{% endblock %}
+        <!--  Film Selection -->
+        <div class="row">
+            <div class="input-field col s12">
+                <select onchange="filmSelected(); filmOrder();" id="review_name" name="review_name" class="validate" required>
+                    <!-- Function assigns the subtitle based on film selection -->
+                    <option value="" disabled selected>Choose your option</option>
+                    {% for film in films %}
+                    <option value="{{ film.film_name }}">{{ film.film_name }}</option>
+                    {% endfor %}
+                </select>
+                <label for="review_name"><i class="far fa-icons"></i> Film</label>
+            </div>
+        </div>
 
+        <!--  Subtitle auto-selected based on Film -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="film_subtitle" name="film_subtitle" class="validate form-border" placeholder="Please select film" readonly>Please select Film above
+                </textarea>
+                <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
+            </div>
+        </div>
+
+        <!--  Auto-assigned film order to keep list sorted properly -->
+        <div class="row film-order">
+            <div class="input-field col s12">
+                <textarea id="film_order" name="film_order" class="validate" readonly>
+                </textarea>
+                <label for="film_order"></label>
+            </div>
+        </div>
+
+        <!--  Film Description, User input -->
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="review_description" name="review_description" 
+                    minlength="5" maxlength="400" class="materialize-textarea 
+                    validate" required></textarea>
+                <label for="review_description"><i class="fal fa-file-alt"></i> Description</label>
+            </div>
+        </div>
+
+        <!--  Add review to list -->
+        <div class="row">
+            <div class="col s12">
+                <button type="submit" class="btn-large buttons">
+                Add Review <i class="fal fa-comment-lines"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
 {% block scripts %}
-    <script src="{{ url_for('static', filename='js/edit.js') }}"></script>    
+<script src="{{ url_for('static', filename='js/edit.js') }}"></script>    
 {% endblock %}

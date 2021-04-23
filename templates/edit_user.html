@@ -1,54 +1,53 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Update Profile</h3>
+<h3 class="center-align">Update Profile</h3>
+<div class="row">
+    <form class="col s12 m8 offset-m2" method="POST">
+        <div class="card-panel">
+            <div class="row">
 
-    <div class="row">
-        <form class="col s12 m8 offset-m2" method="POST">
-            <div class="card-panel">
-                <div class="row">
+                <!--  User can edit their "side" selection -->
+                <div class="input-field col s12">
 
-            <!--  User can edit their "side" selection -->
-                    <div class="input-field col s12">
-                            <!-- Allow user to change their side -->
-                        <select name="sides" id="sides">
-                            <option value="Jedi Knight">Light Side</option>
-                            <option value="Sith Lord">Dark Side</option>
-                        </select>
-                        <label for="sides">Choose Your Side:</label>
-                    </div>
-                </div>
-
-            <!--  User can edit their "profile image" -->
-                <div class="row">
-                    <div class="input-field col s12">
-                            <!-- Allow user to choose their Profile pic from
-                                preset images within the Profile page -->
-                        <select name="profile_image" id="profile_image">
-                            <option value="placeholder.jpg">None</option>
-                            <option value="ben-kenobi.jpg">Obi-One</option>
-                            <option value="yoda.jpg">Yoda</option>
-                            <option value="anakin.jpg">Anakin</option>
-                            <option value="chewy.jpg">Chewy</option>
-                            <option value="emperor.jpg">Palpatine</option>
-                            <option value="han-solo.jpg">Han-Solo</option>
-                            <option value="leia.png">Princess Leia</option>
-                            <option value="vader.jpg">Darth Vader</option>
-                            <option value="stormtrooper.jpg">StormTrooper</option>
-                        </select>
-                        <label for="profile_image">Choose Your Image:</label>
-                    </div>
-                </div>
-                <div class="row center-align">
-                        <!-- Cancel button provided to redirect to main reviews page -->
-                    <a href="{{ url_for('get_reviews') }}" class="btn-large btn-stack red-pro">Cancel</a>
-                    <button type="submit" class="btn-large btn-stack buttons-pro">
-                        Update <i class="fal fa-comment-lines"></i>
-                    </button>
+                    <!-- Allow user to change their side -->
+                    <select name="sides" id="sides">
+                        <option value="Jedi Knight">Light Side</option>
+                        <option value="Sith Lord">Dark Side</option>
+                    </select>
+                    <label for="sides">Choose Your Side:</label>
                 </div>
             </div>
-    
-        </form>
-    </div>
 
+            <!--  User can edit their "profile image" -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <!-- Allow user to choose their Profile pic from
+                        preset images within the Profile page -->
+                    <select name="profile_image" id="profile_image">
+                        <option value="placeholder.jpg">None</option>
+                        <option value="ben-kenobi.jpg">Obi-One</option>
+                        <option value="yoda.jpg">Yoda</option>
+                        <option value="anakin.jpg">Anakin</option>
+                        <option value="chewy.jpg">Chewy</option>
+                        <option value="emperor.jpg">Palpatine</option>
+                        <option value="han-solo.jpg">Han-Solo</option>
+                        <option value="leia.png">Princess Leia</option>
+                        <option value="vader.jpg">Darth Vader</option>
+                        <option value="stormtrooper.jpg">StormTrooper</option>
+                    </select>
+                    <label for="profile_image">Choose Your Image:</label>
+                </div>
+            </div>
+            <div class="row center-align">
+                
+                <!-- Cancel button provided to redirect to main reviews page -->
+                <a href="{{ url_for('get_reviews') }}" class="btn-large btn-stack red-pro">Cancel</a>
+                <button type="submit" class="btn-large btn-stack buttons-pro">
+                Update <i class="fal fa-comment-lines"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
 {% endblock %}

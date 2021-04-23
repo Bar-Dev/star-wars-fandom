@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Registration</h3>
-
-    <div class="row">
+<h3 class="center-align">Registration</h3>
+<div class="row">
     <form class="col s8 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
         <div class="card-panel">
             <div class="row">
@@ -20,7 +19,8 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                        <!-- Allow user to choose their sides -->
+
+                    <!-- Allow user to choose their sides -->
                     <select name="sides" id="sides">
                         <option value="Jedi Knight">Light Side</option>
                         <option value="Sith Lord">Dark Side</option>
@@ -30,7 +30,8 @@
             </div>
             <div class="row profile-pic">
                 <div class="input-field col s12">
-                        <!-- Placeholder Pic preselected on Register -->
+
+                    <!-- Placeholder Pic preselected on Register -->
                     <select name="profile_image" id="profile_image">
                         <option value="placeholder.png" selected>None</option>
                     </select>
@@ -39,21 +40,18 @@
             </div>
             <div class="row btn-align">
                 <button type="submit" class="col s12 reg-login-btn btn-large buttons">
-                    Register
+                Register
                 </button>
             </div>
         </div>
-    
     </form>
+</div>
+<div class="row">
+    <div class="col s12">
+        <p class="center-align">
+            Already Registered
+            <a href="{{ url_for('login') }}" class="reg-btn">Log In</a>
+        </p>
     </div>
-
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                Already Registered
-                <a href="{{ url_for('login') }}" class="reg-btn">Log In</a>
-            </p>
-        </div>
-    </div>
-
+</div>
 {% endblock %}

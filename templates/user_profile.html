@@ -1,24 +1,23 @@
 {% extends "base.html" %}
 {% block content %}
-    
-    <div class="card-panel">
-        <div class="row">
-            <div class="profile-layout">
-                <div class="col s12 m3 offset-m2">
-                    <img id="pro-image" src="/static/images/{{ profile_image }}">
+
+<div class="card-panel">
+    <div class="row">
+        <div class="profile-layout">
+            <div class="col s12 m3 offset-m2">
+                <img id="pro-image" src="/static/images/{{ profile_image }}">
+            </div>
+            <div class="col s12 m2 offset-m2 smallscreen-box">
+                <div class="profile-title">
+                    <h6>Account Name:</h6>
                 </div>
-                <div class="col s12 m2 offset-m2 smallscreen-box">
-                    <div class="profile-title">
-                        <h6>Account Name:</h6>
-                    </div>
-                    <div class="h3">
-                        <h5>
+                <div class="h3">
+                    <h5>
                         <span id="audio">{{ sides }}</span> <strong>{{ username }}'s</strong> Profile
-                        </h5>
-                    </div>
+                    </h5>
                 </div>
             </div>
         </div>
     </div>
-    
+</div>
 {% endblock %}

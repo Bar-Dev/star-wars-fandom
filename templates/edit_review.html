@@ -1,79 +1,79 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="add-review-title"><i class="fal fa-sword-laser"></i>Edit Review</h3>
+<h3 class="add-review-title"><i class="fal fa-sword-laser"></i>Edit Review</h3>
+<div class="row card-panel">
+    <form class="col s12" method="POST" action="{{ url_for('edit_review', reviews_id=reviews._id) }}">
+        <div class="row">
 
-    <div class="row card-panel">
-        <form class="col s12" method="POST" action="{{ url_for('edit_review', reviews_id=reviews._id) }}">
-            <div class="row">
-        <!--  Allow user to change review icon -->
-                <div class="input-field col s12">
-                    <select id="icon_name" name="icon_name" class="validate" required>
+            <!--  Allow user to change review icon -->
+            <div class="input-field col s12">
+                <select id="icon_name" name="icon_name" class="validate" required>
                     <option value="" disabled selected>Choose your option</option>
                     {% for icon in icons %}
-                            <!-- Workaround to display icons within Materialize Dropdown -->
-                        <option value="{{ icon.icon_name }}" data-icon="{{ icon.icon_image }}">{{ icon.icon_font }}</option>
+
+                    <!-- Workaround to display icons within Materialize Dropdown -->
+                    <option value="{{ icon.icon_name }}" data-icon="{{ icon.icon_image }}">{{ icon.icon_font }}</option>
                     {% endfor %}
-                    </select>
-                    <label for="icon_name"><i class="far fa-icons"></i> Icon</label>
-                </div>
+                </select>
+                <label for="icon_name"><i class="far fa-icons"></i> Icon</label>
             </div>
-        
+        </div>
+
         <!--  Review name remains the same -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="review_name" name="review_name" 
-                        minlength="5" maxlength="200" class="materialize-textarea 
-                            validate" required>
-                        {{- reviews.review_name -}}
-                        </textarea>
-                    <label for="review_name"><i class="far fa-icons"></i> Film</label>
-                </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="review_name" name="review_name" 
+                    minlength="5" maxlength="200" class="materialize-textarea 
+                    validate" required>
+                {{- reviews.review_name -}}
+                </textarea>
+                <label for="review_name"><i class="far fa-icons"></i> Film</label>
             </div>
+        </div>
 
         <!--  Subtitle remains the same based on film selection -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="film_subtitle" name="film_subtitle" class="validate" readonly>
-                        </textarea>
-                        <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
-                </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="film_subtitle" name="film_subtitle" class="validate" readonly>
+                </textarea>
+                <label for="film_subtitle"><i class="far fa-icons"></i> Subtitle</label>
             </div>
+        </div>
 
         <!--  Order number remains unchanged -->
-            <div class="row film-order">
-                <div class="input-field col s12">
-                    <textarea id="film_order" name="film_order" class="validate" readonly>
-                        </textarea>
-                        <label for="film_order"></label>
-                </div>
+        <div class="row film-order">
+            <div class="input-field col s12">
+                <textarea id="film_order" name="film_order" class="validate" readonly>
+                </textarea>
+                <label for="film_order"></label>
             </div>
+        </div>
 
         <!--  User can edit previous description -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="review_description" name="review_description" 
-                        minlength="5" maxlength="200" class="materialize-textarea 
-                            validate" required>
-                        {{- reviews.review_description -}}
-                        </textarea>
-                    <label for="review_description"><i class="fal fa-file-alt"></i> Description</label>
-                </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="review_description" name="review_description" 
+                    minlength="5" maxlength="200" class="materialize-textarea 
+                    validate" required>
+                {{- reviews.review_description -}}
+                </textarea>
+                <label for="review_description"><i class="fal fa-file-alt"></i> Description</label>
             </div>
-            <div class="row">
-                <div class="col s12 center-align">
-                    <!--  Cancel Button -->
-                    <a href="{{ url_for('get_reviews') }}" class="btn-large btn-stack red-pro">Cancel</a>
-                    <button type="submit" class="btn-large btn-stack buttons-pro">
-                        Edit Review <i class="fal fa-comment-lines"></i>
-                    </button>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col s12 center-align">
+                
+                <!--  Cancel Button -->
+                <a href="{{ url_for('get_reviews') }}" class="btn-large btn-stack red-pro">Cancel</a>
+                <button type="submit" class="btn-large btn-stack buttons-pro">
+                Edit Review <i class="fal fa-comment-lines"></i>
+                </button>
             </div>
-        </form>
-    </div>
-
+        </div>
+    </form>
+</div>
 {% endblock %}
-
 {% block scripts %}
-    <script src="{{ url_for('static', filename='js/edit.js') }}"></script>    
+<script src="{{ url_for('static', filename='js/edit.js') }}"></script>    
 {% endblock %}
