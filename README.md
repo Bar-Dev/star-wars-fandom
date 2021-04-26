@@ -152,13 +152,13 @@ Font weights used were:
 * **Navigation Bar**
     * The navigation bar has a fixed position and rendered on all pages using the base.html file. 
     * On small screen widths the navbar items reduce to a menu item with a sidebar dropdown.
-    * The ----- color was used on the navbar and footer to keep it unioen throughout.
+    * The Midnight Blue color was used on the navbar and footer to keep it union throughout.
     * While not logged in the navbar allows users to view the reviews, register or log in. Once registered and logged in more options appear to give the user further control during their visit to the site.
 
 * **Footer**
     * Social Links:
     For now the soical links have been kept simple and straight forward and just link to the social networks main pages. In the future, there will be plans to extend these to futher relevant network pages.
-    Upon hovering over the icons the color will change from ------- to -------, this allows the user to identify what icon they are on.
+    Upon hovering over the icons the color will change from White to Russian Violet, this allows the user to identify what icon they are on.
 
 
 ## MongoDB
