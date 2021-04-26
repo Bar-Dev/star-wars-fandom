@@ -122,9 +122,6 @@ Font weights used were:
 
 - As a site developer, I want to see reviews remain organised in an appropiate way.
 
-- As a site developer, I want to see reviews are left in a friendly manner. 
-
-- As a site developer, I want to see who wrote which reviews.
 
 # Features
 

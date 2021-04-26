@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     } else if (soundClip === "Sith Lord") {
         document.getElementById("audio-button").innerHTML = `<button id="audio-control" class="pro-edit waves-effect waves-light btn-large buttons" onclick="stopDark();">Pause Audio</button>`
         audioDark.play();
-    }; 
+    }
 });
 
 // Play & Pause Light Music
@@ -19,7 +19,7 @@ function stopLight() {
     } else {
         audioLight.pause();
     }
-};
+}
 
 // Play & Pause Dark Music
 function stopDark() {
@@ -28,5 +28,5 @@ function stopDark() {
     } else {
         audioDark.pause();
     }
-};
+}
 

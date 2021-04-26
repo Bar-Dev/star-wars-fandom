@@ -5,38 +5,38 @@
 
 # Testing each Feature
 
-- [Home-Page](/readme/img/features/about.PNG)
+- [Home-Page](/readme/images/sw-testing20.png)
     - Appears as intended across all devices. Main image of the iconic Millennium Falcon resizes to each device size along with the text quote on the image.
     - On larger screens two images under the "Coming Soon..." title sit side by side but on smaller devices become stacked on top of each other.
 
 **Prior to Login/Register**
 
-- [Navbar]()
+- [Navbar](/readme/images/sw-testing3.png)
     - On larger screens the Navbar displays all the tab wordings.
     - On smaller resolutions the different tabs disappear and are replaced with a menu button that drops down the tab list.
 
-- [Reviews](/readme/img/features/about.PNG)
+- [Reviews](/readme/images/sw-testing21.png)
     - Appears centered on screen as supposed to with a little room allowed for at the edges for the popout fuction of the dropdown lists.
     - On smaller resolutions, under 600px wide the Subtitle disappears and is moved to within the dropdown of each Review. 
 
-- [Login](/readme/img/features/express.PNG)
+- [Login](/readme/images/sw-testing22.png)
     - Appears centered on screen as supposed to.
     - Resizes accordingly on smaller resolutions.  
 
-- [Register](/readme/img/features/tasting.PNG)
+- [Register](/readme/images/sw-testing23.png)
     - Appears centered on screen as supposed to.
     - Resizes accordingly on smaller resolutions.
     - Gives the user 3 inputs to carry out, upon registration they are directed to their Profile page where they can choose an image.
 
 **After Login**
 
-- [Add Review](/readme/img/features/index_reviews.PNG)
+- [Add Review](/readme/images/sw-testing24.png)
     - Appears centered on screen as supposed to.
     - Resizes accordingly on smaller resolutions.
     - Gives the user 3 inputs to carry out while the "Film Subtitle" is automatically populated based on Film Selection.
     - Icon list displays the icons as well as the name.
 
-- [Profile](/readme/img/features/map.PNG)
+- [Profile](/readme/images/sw-testing25.png)
     - Appears centered on screen as supposed to.
     - On larger resolutions the Profile Image is displayed next to the Users name. 
     - On smaller screens the Profile Image stacks above the name
@@ -44,7 +44,7 @@
     - Upon entering Users own profile a soundclip is played. The "Pause Audio" button functions properly.
     - From Profile Page Users can edit their Profile through the "Edit" button
 
-- [Log Out](/readme/img/features/navbar.PNG)
+- [Log Out](/readme/images/sw-testing16.png)
     - Redirects to Login Page.
     - Appears centered on screen as supposed to.
     - Resizes accordingly on smaller resolutions.
@@ -52,91 +52,93 @@
 
 **Editing Reviews**
 
-- [Edit](/readme/img/features/navbar_mobile.PNG)
+- [Edit](/readme/images/sw-testing26.png)
     - Only users that made reviews can Edit/Delete their own reviews via the three dots that are displayed on their reviews when logged in.
     - Appears centered on screen as supposed to.
     - Resizes accordingly on smaller resolutions.
     - Gives the user 2 inputs to carry out, Film Name and Subtitle cannot be altered while editing.
 
-- [Footer](/readme/img/features/footer.PNG)
+- [Footer](/readme/images/sw-testing27.png)
     - Sticky Footer appears as it should on all pages and devices, at the bottom of page.
     - Social Links all link to required web pages.
     - Social Links change colour when hovered over for identification. 
 
-- [Delete-Review](/readme/img/features/reservation_cancel.PNG)
+- [Delete-Review](/readme/images/sw-testing28.png)
     - Only users that made reviews can Edit/Delete their own reviews via the three dots that are displayed on their reviews when logged in.
     - Re-directs to "Reviews" page.
     - Review is removed.
 
-<!--
 
 # Testing the User-stories
 
 - As a user, I want to see what site navigation options are available.
 
-  - [On the index page, either through clicking the menu in navbar, or scrolling down](/readme/img/features/express.PNG)
-  - [At the same point, but having selected Sample Tasting Menu](/readme/img/features/tasting.PNG)
+  - [On the Home Page, options are visible on main Navbar](/readme/images/sw-testing1.png)
+  - [On smaller screens by clicking the "menu" button a dropdown of options appear](/readme/images/sw-testing2.png)
+  - [When logged in additional navigation items appear](/readme/images/sw-testing3.png)
 
-- As a user, I want to have anchors to different parts of the page, so that I do not have to keep scrolling.
+- As a user, I want to be able to immediately grasp what the website is about.
 
-  - [In the header, there is the navbar which jumps to all appropriate anchors](/readme/img/features/navbar.PNG)
-  - [Or on mobile, having selected the three bars icon](/readme/img/features/navbar_mobile.PNG)
+  - [In the header, the Logo immediately tells me it is a Star Wars related site](/readme/images/sw-testing4.png)
+  - [The hero image of the Millennium Falcon combined with a quote from Han-Solo tells me it is a Star Wars related site](/readme/images/sw-testing5.png)
+  - [In the header and on the main image the link to "Reviews" tells me what the site is about](/readme/images/sw-testing6.png)
 
-- As a user, I want to see information on the chef, so I know if it is a chef I am interested in.
+- As a user, I want to see a list of Star Wars films available that have been reviewed.
 
-  - [On the index page, either selected "about" in the navbar, or having scrolled](/readme/img/features/about.PNG)
+  - [On the Home page, either selected "Reviews" in the navbar, or "View Star Wars Reviews" on the main image](/readme/images/sw-testing6.png)
 
-- As a user, I want to see reviews of the restaurant, so that others' experiences may influence my decision.
+- As a user, I want to be able see who reviewed each film.
 
-  - [On the index page, either selected "Reviews" in the navbar, or having scrolled](/readme/img/features/index_reviews.PNG)
+  - [On the Reviews page, scroll down through the reviews and the reviewer can be seen highlighted in blue](/readme/images/sw-testing7.png)
 
-- As a user, I want to see contact information for the restaurant, so that I may call with a special request.
+- As a user, I want to see the profile pages of individuals that reviewed certain films.
 
-  - [On any page, at the bottom in the footer, or in the Maps section](/readme/img/features/footer.PNG)
+  - [On the reviews page once I hover over the reviewers name it prompts me to view profile, by clicking it leads me to reviewers profile](/readme/images/sw-testing8.png)
 
-- As a user, I wish to see an address and a map, so I can ensure I am heading to the right place.
+- As a user, I want to be able to create my own profile page.
 
-  - [On the index page, either selected "Find Us" in the navbar, or having scrolled](/readme/img/features/map.PNG)
+  - [In the header, by clicking "Register" it leads me to a registration page to input my details](/readme/images/sw-testing9.png)
 
-- As a user, I want to be able to create an account, so that I may manage my bookings and reviews.
+- As a user, I want to see what profile images are available to me.
 
-  - [Having selected Login, the user will be presented with the Okta login screen](/readme/img/features/okta.PNG)
+  - [Once registered the user is lead to their Profile page where they have the choice to "edit" their profile, this then brings up a number of different Profile image options](/readme/images/sw-testing10.png)
 
-- As a user, I want to be able to make a reservation, so that I may visit the restaurant for a meal.
+- As a user, I want to be able to edit my profile details should I wish to.
 
-  - [Once logged in, the user may create a reservation from the dashboard after pressing the make a reservation button](/readme/img/features/reservation.PNG)
+  - [On their Profile page where they have the choice to "edit" their profile, this then brings up a number of different options](/readme/images/sw-testing11.png)
 
-- As a user, I want to be able to leave a review, so that I may let other people know my opinion of my meal.
+- As a user, I want to be able to add a review of my own.
 
-  - [Once logged in, the user may create a review from the dashboard after pressing the leave a review button](/readme/img/features/review.PNG)
+  - [Once logged in, the user will have the "Add Review" tab in the navbar which brings them to the "Add Review" page](/readme/images/sw-testing12.png)
 
-- As a user, I want to be able to edit my reservation, in case circumstances change.
+- As a user, I want to be able to edit my review should I change my mind.
 
-  - [Once logged in, the user may edit a reservation from the dashboard after pressing the Edit this Booking button on the appropriate card.](/readme/img/features/reservation_edit.PNG)
+  - [On the reviews page, if the user created the review they will see three dots menu on the review they created, upon hovering over the dots they will see a dropdown menu to edit or delete the review](/readme/images/sw-testing13.png)
 
-- As a user, I want to be able to cancel my reservation, in case I am no longer able to, or wanting, to attend.
+- As a user, I want to be able to delete my review should I chose to.
 
-  - [Once logged in, the user may cancel a reservation from the dashboard after pressing the Cancel this Booking button on the appropriate card. A modal will appear to ensure they want to do this.](/readme/img/features/reservation_cancel.PNG)
+  - [On the reviews page, if the user created the review they will see three dots menu on the review they created, upon hovering over the dots they will see a dropdown menu to edit or delete the review. A modal will appear to ensure they want to do this.](/readme/images/sw-testing14.png)
 
-- As a user, I want to be able to edit my review, in case I have changed my opinion of the restaurant.
+- As a user, I want to be able to search for different reviews by using keywords.
 
-  - [Once logged in, the user may edit a reservation from the dashboard after pressing the Edit this Booking button on the appropriate card.](/readme/img/features/review_edit.PNG)
+  - [On the reviews page, user can enter search words into the search box at the top of page, minimum of 3 letters required](/readme/images/sw-testing15.png)
 
-- As a user, I want to be able to cancel my review, in case I have changed my opinion of the restaurant.
+- As a user, I want to be able to log out of my profile when I'm done.
 
-  - [Once logged in, the user may delete a review from the dashboard after pressing the Delete this Review button on the appropriate card. A modal will appear to ensure they want to do this.](/readme/img/features/review_delete.PNG)
+  - [In the navbar, once logged in the user will have a "Logout" tab available, once pressed they will redirect to Login page with a confirmation they are logged out](/readme/images/sw-testing16.png)
 
-- As a site owner, I wish to see all the reservations that have been made, so that I know which bookings to prepare for.
+- As a site developer, I want to see all the users that have created accounts
 
-  - [Once logged in, on the admin account, the admin may see all the reservations that have been made.](/readme/img/features/dashboard_admin.PNG)
+  - [From the MongoDB Database used to store all the data I can view all users and details provided](/readme/images/sw-testing17.png)
 
-- As a site owner, I wish to see all the reviews that have been made, so that I know what people think of my restaurant.
+- As a site developer, I want to see all the reviews that users have left.
 
-  - [Once logged in, on the admin account, the admin may see all the reviews that have been made.](/readme/img/features/dashboard_admin.PNG)
+  - [I can review or edit each user review from the MongoDB Database](/readme/images/sw-testing18.png)
 
-- As a site owner, I want the reservations that would have occurred deleted, so that I do not have clutter from expired reservations.
+- As a site developer, I want to see reviews remain organised in an appropiate way.
 
-  - [Whenever the index page is called, the mongodb collection checks today's date versus the date of each reservation, and if it is less than today, it is deleted from the collection.](/readme/img/features/reservation_expired.PNG)
+  - [When created the Film Title is assigned an order number, this organises all the same film reviews next to each other in the reviews page.](/readme/images/sw-testing19.png)
+
 
 # Validation Testing
 
@@ -145,22 +147,6 @@
 - CSS has been validated using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) 
 
 - JS has been validated using [JSHint](https://jshint.com)
-    - The line /*jshint esversion: 6 */ was added to the start each file for testing purposes. 
 
 - Python has been checked for PEP8 compliance using [PEP8](http://pep8online.com)
 
-## Validation Testing Results 
-
-![HTML validation](/readme/img/validation/html.png)
-
-- [Messages filtered were ones to do with UiKit](/readme/img/validation/message_filtering.png)
-
-![CSS validation](/readme/img/validation/css.png)
-
-
-![JS validation](/readme/img/validation/js.png)
-
-
-![PEP8 validation](/readme/img/validation/pep8.png)
-
--->

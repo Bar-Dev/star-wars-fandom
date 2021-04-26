@@ -38,7 +38,7 @@ $('.dropdown-trigger').dropdown();
                 });
             }
         });
-    };
+    }
 });
 
 // Function to input subtitle based on selected File Title
@@ -66,7 +66,7 @@ function filmSelected() {
         } else {
             document.getElementById("film_subtitle").innerHTML = "Please Select Film";
         }
-    };
+    }
 
 
     
